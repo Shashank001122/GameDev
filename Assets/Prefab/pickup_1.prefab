@@ -123,3 +123,4 @@ MonoBehaviour:
   WeaponToEquip: {fileID: 2919639997448566125, guid: 05eece2bb710bea49a6f4b9825e85252,
     type: 3}
   wavenumber: 0
+  joystick2: {fileID: 0}

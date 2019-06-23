@@ -209,8 +209,8 @@ public class MyJoyStick : MonoBehaviour
 
 
     public void Heal(int healamount){
-        if(health+healamount>6){
-            health=6;
+        if(health+healamount>8){
+            health=8;
         }
         else{
             health=health+healamount;

@@ -148,3 +148,5 @@ MonoBehaviour:
     type: 3}
   shotPoint: {fileID: 951522100}
   timeBetweenShots: 0.5
+  joystick2: {fileID: 1943871267040289117, guid: 3ebad2a6e1e937b4b8a308712b78914b,
+    type: 3}

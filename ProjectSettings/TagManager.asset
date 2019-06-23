@@ -11,6 +11,7 @@ TagManager:
   - wave
   - patrolPoints
   - devil
+  - weaponjoystick
   layers:
   - Default
   - TransparentFX

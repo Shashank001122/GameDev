@@ -1,7 +1,4 @@
-﻿//Manish is a sux
-
-
-/*
+﻿/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2919639997448566121}
   m_LocalRotation: {x: 0, y: 0, z: 0.0014835156, w: 0.9999989}
-  m_LocalPosition: {x: -0.035, y: 0.315, z: -0.74000007}
+  m_LocalPosition: {x: 0.27, y: -0.61, z: -0.74000007}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children:
   - {fileID: 4867276475603598173}
@@ -118,6 +118,8 @@ MonoBehaviour:
     type: 3}
   shotPoint: {fileID: 4867276475603598173}
   timeBetweenShots: 0.5
+  joystick2: {fileID: 1943871267040289117, guid: 3ebad2a6e1e937b4b8a308712b78914b,
+    type: 3}
 --- !u!1 &4867276475603598146
 GameObject:
   m_ObjectHideFlags: 0

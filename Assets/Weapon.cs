@@ -41,49 +41,37 @@ public class Weapon : MonoBehaviour
     public Transform shotPoint;
     public float timeBetweenShots;
     private float shotTime;
-    //public Joystick joystick2;
+    public Joystick joystick2;
     
-
     // Update is called once per frame
     private void Update()
     {
+        //joystick2=GameObject.FindObjectOfType<Joystick>();
+        //Debug.Log("joy"+GameObject.FindGameObjectWithTag("Weapon").transform.name+joystick2);
+        if( GameObject.FindGameObjectWithTag("Weapon").transform.name=="weapon_1(Clone)"||
+            GameObject.FindGameObjectWithTag("Weapon").transform.name=="weapon_2(Clone)"||
+            GameObject.FindGameObjectWithTag("Weapon").transform.name=="weapon_3(Clone)"||
+            GameObject.FindGameObjectWithTag("Weapon").transform.name=="gun(Clone)"){
+           
+           GameObject obj=GameObject.FindGameObjectWithTag("weaponjoystick");
+           joystick2=obj.GetComponent<Joystick>();
+       }
+        var x =joystick2.Horizontal;
+        var y =joystick2.Vertical;
         
-        Vector2 direction=Camera.main.ScreenToWorldPoint(Input.mousePosition)-transform.position;
-        float angle=Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg;
-        Quaternion rotation =Quaternion.AngleAxis(angle-90,Vector3.forward);
-        transform.rotation=rotation;
-        bool chk=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>().check;
         
-        if(Input.GetMouseButton(0)){
+        if (x != 0.0 || y != 0.0){//x zero nahi hona chahiye ya y zero nahi hona chahiye
+            var angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+            //transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
+            Quaternion rotation =Quaternion.AngleAxis(angle-90,Vector3.forward);
+            transform.rotation=rotation;
+            bool chk=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>().check;
+        
             if (Time.time>=shotTime){
                 Instantiate(projectile,shotPoint.position,transform.rotation);
                 shotTime=Time.time+timeBetweenShots;//time between each shot the player has to wait..
             }
+    
         }
-        /* 
-        //Vector2 touchPosition =new Vector2(joystick2.Horizontal,joystick2.Vertical);
-
-                // Get a Directional Vector from the Joystick input / offset from center
-        //Vector2 targetDirection = new Vector2( touchPosition.x,touchPosition.y );
-        
-        // Quaternion.LookRotation logs an error if the forward direction is zero.
-        // check if targetDirection is NOT Vector3.zero
-        Vector2 targetDirection=Camera.main.ScreenToWorldPoint(Input.mousePosition)-transform.position;
-        //float angle=Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg;
-        //Quaternion rotation =Quaternion.AngleAxis(angle-90,Vector3.forward);
-        //transform.rotation=rotation;
-        bool chk=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyScript>().check;
-        
-        if ( targetDirection!= Vector2.zero && chk==false)
-        {
-            if (Time.time>=shotTime){
-                float angle=Mathf.Atan2(targetDirection.y,targetDirection.x)*Mathf.Rad2Deg;
-                Quaternion rotation =Quaternion.AngleAxis(angle-90,Vector3.forward);
-                transform.rotation=rotation;
-                Instantiate(projectile,shotPoint.position,transform.rotation);
-                shotTime=Time.time+timeBetweenShots;//time between each shot the player has to wait..
-            }
-            
-        }  */      
     }
 }
