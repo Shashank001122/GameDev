@@ -25,7 +25,7 @@ public class WaveSpawnner : MonoBehaviour
     
     public GameObject Devil;
     public Transform DevilSpawnPoint;
-
+public GameObject radialprogressbar;
     public int countEnemy;
 
     private void Start(){
@@ -101,7 +101,7 @@ public class WaveSpawnner : MonoBehaviour
             else{
                 //Debug.Log("Finished");
                Instantiate(Devil,DevilSpawnPoint.position,DevilSpawnPoint.rotation);
-            
+            radialprogressbar.SetActive(true);
             }
         }
     }

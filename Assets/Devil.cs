@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Devil : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Devil : MonoBehaviour
     public int damage;
     private int halfHealth;
     private Animator anim;
+    //private GameObject radial;    
     private ScreenTransition screenTransition;
     private void Start(){
         halfHealth=health/2;
@@ -22,6 +24,7 @@ public class Devil : MonoBehaviour
         health-=amount;
         if(health<=0){
             Destroy(this.gameObject);
+
             screenTransition.LoadScene("Win");
         }
 

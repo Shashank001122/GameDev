@@ -12,6 +12,7 @@ TagManager:
   - patrolPoints
   - devil
   - weaponjoystick
+  - radial
   layers:
   - Default
   - TransparentFX

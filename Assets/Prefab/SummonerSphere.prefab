@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b5f1cdecd22b049922aaeac38be243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
+  health: 16
   player: {fileID: 0}
   go: {fileID: 0}
   speed: 10

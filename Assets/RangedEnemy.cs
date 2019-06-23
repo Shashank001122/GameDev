@@ -29,6 +29,7 @@ public class RangedEnemy : OurEnemy
     }
     }
     public void RangedAttack(){
+        if(player!=null){
         Vector2 direction=player.position-shotPoint.position; 
         float angle=Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg;
         Quaternion rotation =Quaternion.AngleAxis(angle-90,Vector3.forward);
@@ -37,5 +38,5 @@ public class RangedEnemy : OurEnemy
         Instantiate(EnemyBullet,shotPoint.position,shotPoint.rotation);
 
     }
-
+    }
 }
