@@ -7,10 +7,14 @@ public class Pickup : MonoBehaviour
     public Weapon WeaponToEquip;
     WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
-    //public List<GameObject> myList = new List<GameObject>();
-    //public GameObject ufo;
-    GameObject ufoClone;
+    
+     public GameObject explosion;
      public float Timer = 5.0f;
+     public void DestroyProjectile(){
+        //Destroy(gameObject);
+        Instantiate(explosion,transform.position,Quaternion.identity);
+        
+    }
 
     //gameobject is out pickup collides with player..
     public void OnTriggerEnter2D(Collider2D collision){
@@ -30,10 +34,12 @@ public class Pickup : MonoBehaviour
                 }
             }
             Destroy(gameObject);
+            DestroyProjectile();
             }
             else{
             collision.GetComponent<PlayerMovement>().ChangeWeapon(WeaponToEquip);
-            Destroy(gameObject);//destory pickup    
+            Destroy(gameObject);//destory pickup  
+              
             }
         }        
         }
@@ -42,7 +48,7 @@ public class Pickup : MonoBehaviour
         Destroy(this.gameObject,3);
        }
        else{
-           Destroy(this.gameObject,2);
+           Destroy(this.gameObject,3f);
        }
        
     }

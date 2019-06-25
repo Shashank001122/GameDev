@@ -144,4 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponToEquip: {fileID: 0}
   wavenumber: 0
+  explosion: {fileID: 1506863734719116749, guid: af12bd897523b1b4f8df14621dc3c004,
+    type: 3}
   Timer: 5

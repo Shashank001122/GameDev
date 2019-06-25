@@ -60,9 +60,10 @@ public GameObject radialprogressbar;
             Transform randomSpot=spawnPoints[Random.Range(0,spawnPoints.Length-6)];
             Instantiate(randomEnemy,randomSpot.position,randomSpot.rotation);
             //Debug.Log(currentWave.barrel);
-            
+            if(i%2!=0){
             Transform barrelspot=spawnPoints[Random.Range(6,spawnPoints.Length-1)];
             Instantiate(currentWave.barrel,barrelspot.position,barrelspot.rotation);
+            }
             //DestroyImmediate(currentWave.barrel,true);
             countEnemy+=1;
             }

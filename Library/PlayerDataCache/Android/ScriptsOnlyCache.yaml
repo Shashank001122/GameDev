@@ -28,11 +28,14 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -828,7 +831,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: b7437ebbdd6235b5030d1ca14f356619
+      Hash: b9cb6c5e39988ea0338395f849a6aaff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pickup
@@ -840,7 +843,7 @@ ScriptsOnlyBuild:
     className: MeleeEnemy
   - hash:
       serializedVersion: 2
-      Hash: 0faf75602660ede98dc67694cccca6a0
+      Hash: e9d9aa3dc11930ebc329646d9976e2d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveSpawnner
