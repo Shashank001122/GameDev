@@ -8,6 +8,7 @@ public class WaveSpawnner : MonoBehaviour
     [System.Serializable]
     public class Wave{
         public OurEnemy[] enemies;
+        public Pickup barrel;
         public int count;
         public float timeBetweenSpawns;
 
@@ -34,13 +35,14 @@ public GameObject radialprogressbar;
     }
 
     IEnumerator StartNextWave(int index){
-        yield return new WaitForSeconds(timeBetweenWaves);
+        yield return new WaitForSeconds(timeBetweenWaves);//2 seconds ruka phir agal coroutine..
         StartCoroutine(SpawnWave(index));
     }  
     IEnumerator SpawnWave(int index){
         currentWave=waves[index];
         countEnemy=0;
         for (int i=0;i<currentWave.count;i++){
+            
             if (player==null){
                 yield break;
             }
@@ -54,8 +56,14 @@ public GameObject radialprogressbar;
             if(countEnemy==0){
                 randomEnemy=currentWave.enemies[0];
             }
-            Transform randomSpot=spawnPoints[Random.Range(0,spawnPoints.Length)];
+            Debug.Log(spawnPoints.Length);
+            Transform randomSpot=spawnPoints[Random.Range(0,spawnPoints.Length-6)];
             Instantiate(randomEnemy,randomSpot.position,randomSpot.rotation);
+            //Debug.Log(currentWave.barrel);
+            
+            Transform barrelspot=spawnPoints[Random.Range(6,spawnPoints.Length-1)];
+            Instantiate(currentWave.barrel,barrelspot.position,barrelspot.rotation);
+            //DestroyImmediate(currentWave.barrel,true);
             countEnemy+=1;
             }
             
@@ -85,7 +93,8 @@ public GameObject radialprogressbar;
                 finishedSpawnning=false;
             }
             
-            yield return new WaitForSeconds(currentWave.timeBetweenSpawns);
+            yield return new WaitForSeconds(currentWave.timeBetweenSpawns);//spawnning k time k beech 
+                                                                            //me ruka phir continue kiya
         }
         
     }

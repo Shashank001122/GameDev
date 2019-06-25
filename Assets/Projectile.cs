@@ -59,6 +59,8 @@ public class Projectile : MonoBehaviour
                 
             }
             else{   
+
+                
                 
                 collision.GetComponent<OurEnemy>().TakeDamage(damage); //collision.GetComponent<Enemy> loads the enemy script on
                                                     //collision object and call the TakeDamage function of Enemy.cs
