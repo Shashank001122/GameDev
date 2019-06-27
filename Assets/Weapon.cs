@@ -41,7 +41,14 @@ public class Weapon : MonoBehaviour
     public Transform shotPoint;
     public float timeBetweenShots;
     private float shotTime;
+
+    Animator cameraAnim;
+
     public Joystick joystick2;
+
+    private void Start(){
+        cameraAnim = Camera.main.GetComponent<Animator>();
+    }
     
     // Update is called once per frame
     private void Update()
@@ -69,6 +76,7 @@ public class Weapon : MonoBehaviour
         
             if (Time.time>=shotTime){
                 Instantiate(projectile,shotPoint.position,transform.rotation);
+                cameraAnim.SetTrigger("shake");
                 shotTime=Time.time+timeBetweenShots;//time between each shot the player has to wait..
             }
     

@@ -113,8 +113,6 @@ MonoBehaviour:
     type: 3}
   damage: 4
   wavenumber: 0
-  prefab: {fileID: 7563285867679799627, guid: 786dfdf3cc5dad14bb562964fa2cbb40, type: 3}
-  Devilscripthealth: 0
 --- !u!61 &-4213338887762735453
 BoxCollider2D:
   m_ObjectHideFlags: 0
