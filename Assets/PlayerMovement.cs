@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
    public Image[] hearts;
    public Sprite fullHeart;
    public Sprite emptyHeart;
+   public Animator hurtAnim;
    WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
   
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int damageAmount){
         health-=damageAmount;
         UpdateHealthUI(health);
+        hurtAnim.SetTrigger("hurt");
         if (health<=0){
             Destroy(gameObject);
             //screenTransition.LoadScene("Lose");
