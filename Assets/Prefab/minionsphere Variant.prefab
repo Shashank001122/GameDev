@@ -284,7 +284,7 @@ MonoBehaviour:
   speed: 5
   timeBetweenAttacks: 5
   damage: 1
-  pickUpChance: 25
+  pickUpChance: 20
   pickups:
   - {fileID: 3396478834323875631, guid: bdaf05d4009129642bccf01c93ba2fd4, type: 3}
   - {fileID: 4212121972054764341, guid: 06e23d31f220ff24c905b363b18186ac, type: 3}
