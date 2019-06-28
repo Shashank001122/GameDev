@@ -12,6 +12,7 @@ public class Devil : MonoBehaviour
     public int damage;
     private int halfHealth;
     private Animator anim;
+    //public Devil prefab;
     //private GameObject radial;    
     private ScreenTransition screenTransition;
     private void Start(){
@@ -22,9 +23,9 @@ public class Devil : MonoBehaviour
 
     public void TakeDamage(int amount){
         health-=amount;
+        
         if(health<=0){
             Destroy(this.gameObject);
-
             screenTransition.LoadScene("Win");
         }
 

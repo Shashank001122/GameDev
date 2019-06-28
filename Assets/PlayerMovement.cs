@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
    public Image[] hearts;
    public Sprite fullHeart;
    public Sprite emptyHeart;
-   public Animator hurtAnim;
    WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
   
@@ -46,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int damageAmount){
         health-=damageAmount;
         UpdateHealthUI(health);
-        hurtAnim.SetTrigger("hurt");
         if (health<=0){
             Destroy(gameObject);
             //screenTransition.LoadScene("Lose");
@@ -75,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
     //Now destroy them
     foreach (GameObject child in allChildren)
     {
-        if((child.transform.name != "body") && (child.transform.name != "leg left") && (child.transform.name != "leg right"))
+        if((child.transform.name != "HealthBar")  && (child.transform.name != "body") && (child.transform.name != "leg left") && (child.transform.name != "leg right"))
             Destroy(child.gameObject);
     }
 

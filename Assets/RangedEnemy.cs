@@ -18,7 +18,7 @@ public class RangedEnemy : OurEnemy
     private void Update()
     {
         if(player!=null){
-            Debug.Log(player);
+            //Debug.Log(player);
         if(Vector2.Distance(transform.position,player.position)>stopDistance){
             transform.position=Vector2.MoveTowards(transform.position,player.position,speed*Time.deltaTime);
         }
