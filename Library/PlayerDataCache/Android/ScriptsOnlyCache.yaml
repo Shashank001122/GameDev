@@ -6,11 +6,8 @@ ScriptsOnlyBuild:
     - Devil
     - EnemyBullet
     - FixedJoystick
-    - HealthBar
-    - HealthBarSummoner
     - MeleeEnemy
     - MyJoyStick
-    - OurEnemy
     - PatrolBehaviour
     - Pickup
     - PlayerMovement
@@ -35,6 +32,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -114,10 +112,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
-    - Class: 61
-      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -146,19 +140,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9844}
     - Class: 114
       Script: {instanceID: 9982}
-    - Class: 114
-      Script: {instanceID: 10124}
-    - Class: 114
-      Script: {instanceID: 10888}
-    - Class: 114
-      Script: {instanceID: 184228}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -195,8 +181,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
-    - Class: 111
-      Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9714}
     - Class: 114
@@ -221,8 +205,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10070}
     - Class: 114
       Script: {instanceID: 10124}
-    - Class: 114
-      Script: {instanceID: 10268}
     - Class: 114
       Script: {instanceID: 10380}
     - Class: 114
@@ -249,10 +231,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10822}
     - Class: 114
       Script: {instanceID: 10888}
-    - Class: 114
-      Script: {instanceID: 184228}
-    - Class: 114
-      Script: {instanceID: 201700}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -787,7 +765,7 @@ ScriptsOnlyBuild:
     className: ChaseBehaviour
   - hash:
       serializedVersion: 2
-      Hash: cbd60ec669164ed2588497cb04bcdedc
+      Hash: e26025284a17a86633b16e70a2ffdba9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Projectile
@@ -865,7 +843,7 @@ ScriptsOnlyBuild:
     className: MeleeEnemy
   - hash:
       serializedVersion: 2
-      Hash: e18c0d1edaa631a9541e06f9076e2432
+      Hash: e9d9aa3dc11930ebc329646d9976e2d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveSpawnner
@@ -1013,18 +991,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: VariableJoystick
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HealthBar
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HealthBarSummoner
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

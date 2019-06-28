@@ -51,7 +51,7 @@ public class OurEnemy : MonoBehaviour
          gameObject.transform.localScale = Vector3.Lerp(originalScale, destinationScale, currentTime /
             time);
              currentTime += Time.deltaTime;
-             //Debug.Log(currentTime);
+             Debug.Log(currentTime);
              yield return null;
              //yield return new WaitForSeconds(1.0f);
          }
@@ -67,11 +67,10 @@ public class OurEnemy : MonoBehaviour
                 int randomNumber=Random.Range(0,100);
                 if (randomNumber<pickUpChance){ 
                 if(GameObject.FindGameObjectWithTag("Weapon").transform.name !="gun(Clone)"){
-                    pickups[1].transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;    
-                    //pickups[1].transform.position=GameObject.FindGameObjectWithTag("Player").transform.position+0.3f*
-                    //(this.gameObject.transform.position-GameObject.FindGameObjectWithTag("Player").transform.position)/2;    
+                    pickups[1].transform.position=this.gameObject.transform.position+new Vector3(1.5f,1.5f,0f);    
+                    //gameObject.pickUpChance=60;
                     Instantiate(pickups[1],pickups[1].transform.position,transform.rotation);
-                    
+                    //Debug.Log(pickups[1]);
                     StartCoroutine(Scale(4.0f));
                 }
             }
@@ -111,12 +110,12 @@ public class OurEnemy : MonoBehaviour
                 if((wavenumber==1 && mainweapon.transform.name=="gun(Clone)") || 
                 (wavenumber==1 && mainweapon.transform.name=="gun"))
                 {    
-                pickups[0].transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;
-                Instantiate(pickups[0],pickups[0].transform.position,transform.rotation);//gameObject.instantiate     
+                Instantiate(pickups[0],transform.position,transform.rotation);//gameObject.instantiate    
+                //Debug.Log(mainweapon.transform.name);
                 }
 
                  else{
-                 
+                 Debug.Log("error"+mainweapon);    
                  char name=mainweapon.transform.name[7];
                  ind=System.Convert.ToInt32(name);//1 or 2
 
@@ -124,19 +123,19 @@ public class OurEnemy : MonoBehaviour
                     
                     if(gameObject.transform.name!="Sphere(Clone)"){
                         randomPickup=pickups[Random.Range(1,pickups.Length-1)];
-                        //randomPickup.transform.position=this.gameObject.transform.position+new Vector3(2f,2f,0f);
-                    randomPickup.transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;
+                        randomPickup.transform.position=this.gameObject.transform.position+new Vector3(7f,1f,0f);
                         
-                        Instantiate(randomPickup,randomPickup.transform.position,transform.rotation);
+                        Instantiate(randomPickup,transform.position,transform.rotation);
                     }
                 
                 }
                 if(ind==50){//arrow now, pick bow
                     randomPickup=pickups[2];
-                    randomPickup.transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;
+                    randomPickup.transform.position=this.gameObject.transform.position+new Vector3(7f,1f,0f);
                     Instantiate(randomPickup,transform.position,transform.rotation);
                 }
-                            
+                                                    
+            //}          
         }
             }
     int randHealth=Random.Range(0,101);

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3396478834323875631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.822523, y: 7.2921596, z: 0}
+  m_LocalPosition: {x: 1.12, y: 3.117, z: 0}
   m_LocalScale: {x: 0.52630615, y: 0.558522, z: 1.189}
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,5 +123,4 @@ MonoBehaviour:
   WeaponToEquip: {fileID: 2919639997448566125, guid: 05eece2bb710bea49a6f4b9825e85252,
     type: 3}
   wavenumber: 0
-  explosion: {fileID: 0}
-  Timer: 5
+  joystick2: {fileID: 0}

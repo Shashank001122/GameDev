@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3969073131151569639}
   - component: {fileID: 2081081377}
   m_Layer: 0
-  m_Name: Explosion_G_W1
+  m_Name: Projectile Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4828,4 +4828,3 @@ MonoBehaviour:
   lifeTime: 0.2
   explosion: {fileID: 3969073131151569638}
   damage: 1
-  wavenumber: 0
