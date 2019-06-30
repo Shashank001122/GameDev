@@ -20,7 +20,7 @@ public class rpb : MonoBehaviour
             TextIndicator.GetComponent<Text>().text=((int)currentAmount).ToString();
             TextLoading.gameObject.SetActive(true);
         
-        LoadingBar.GetComponent<Image>().fillAmount=currentAmount/12;
+        LoadingBar.GetComponent<Image>().fillAmount=currentAmount/24;
     }
     else{
             TextIndicator.GetComponent<Text>().text="0";

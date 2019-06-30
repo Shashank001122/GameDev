@@ -523,7 +523,7 @@ MonoBehaviour:
   count: 0
   wavenumber: 0
   scalingFactor: 4
-  stopDistance: 10
+  stopDistance: 20
   shotPoint: {fileID: 2094207386}
   EnemyBullet: {fileID: 1506863734719116749, guid: deaaa116029014742b3e945e3683859a,
     type: 3}

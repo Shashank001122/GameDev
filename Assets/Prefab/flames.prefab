@@ -107,13 +107,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe432a419ed0874e94890b6a52240ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  lifeTime: 0.5
+  speed: 60
+  lifeTime: 0.7
   explosion: {fileID: 3969073131151569638, guid: cee6faf1320cf3d4f963c6e59a7f9ee2,
     type: 3}
   damage: 1
   wavenumber: 0
-  prefab: {fileID: 7563285867679799627, guid: 786dfdf3cc5dad14bb562964fa2cbb40, type: 3}
+  prefab: {fileID: 0}
+  prefab1: {fileID: 0}
   Devilscripthealth: 0
 --- !u!61 &-4213338887762735453
 BoxCollider2D:
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002977252, y: -0.08831358}
+  m_Offset: {x: -0.03, y: -0.0072466135}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -139,5 +140,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6404512, y: 1.4106264}
+  m_Size: {x: 1.1, y: 0.9782646}
   m_EdgeRadius: 0

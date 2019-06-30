@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
    public Sprite emptyHeart;
    WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
-  
+  public Animator hurtAnim;
   private ScreenTransition screenTransition;
  
    private void Start(){
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("ISRunning",false); 
         }
 
-        
+              
    }
     private void FixedUpdate(){ //any code related to physics goes inside this function
         rb.MovePosition(rb.position + moveAmount*Time.fixedDeltaTime);
@@ -45,19 +45,21 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int damageAmount){
         health-=damageAmount;
         UpdateHealthUI(health);
+        hurtAnim.SetTrigger("hurt");
         if (health<=0){
             Destroy(gameObject);
-            //screenTransition.LoadScene("Lose");
+            if(GameObject.FindGameObjectWithTag("Player")==null){
+            screenTransition.LoadScene("Lose");
+            }
+            }
         }
-    }
+    
 
 
     //////////Change weapon is called///////////
     public void ChangeWeapon(Weapon WeaponToEquip){
         
     GameObject playerObject=GameObject.FindGameObjectWithTag("Player");
-    
-    
     int i = 0;
 
     //Array to hold all child obj
@@ -73,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     //Now destroy them
     foreach (GameObject child in allChildren)
     {
-        if((child.transform.name != "HealthBar")  && (child.transform.name != "body") && (child.transform.name != "leg left") && (child.transform.name != "leg right"))
+        if((child.transform.name != "healthbar")  && (child.transform.name != "body") && (child.transform.name != "leg left") && (child.transform.name != "leg right"))
             Destroy(child.gameObject);
     }
 

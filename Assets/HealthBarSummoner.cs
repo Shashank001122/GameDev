@@ -8,14 +8,14 @@ public class HealthBarSummoner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        localScale=transform.localScale;
+        localScale=transform.localScale*6/8;
     }
 
     // Update is called once per frame
     void Update()
     {
         float health=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().health;
-        localScale.x=health*6/8;
+        localScale.x=health/3;
         transform.localScale=localScale;
     }
 }

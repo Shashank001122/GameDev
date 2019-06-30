@@ -11,13 +11,13 @@ public class Projectile : MonoBehaviour
     WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
     public GameObject prefab;
+    //public GameObject prefab1;
     public int Devilscripthealth;
     
 
     private void Start(){
         //Destroy(gameObject,lifeTime);//if the lieftime is passed we destroy the projecticle..
         Invoke("DestroyProjectile",lifeTime);
-        
     }
 
     private void Update(){
@@ -40,6 +40,11 @@ public class Projectile : MonoBehaviour
             WaveSpawnnerScript=GameObject.FindGameObjectWithTag("wave").GetComponent<WaveSpawnner>();
             wavenumber=WaveSpawnnerScript.currentWaveIndex;
             
+            if(collision.GetComponent<OurEnemy>().transform.name=="smallDevil(Clone)"){
+                collision.GetComponent<OurEnemy>().smallDevilHit(damage); 
+                DestroyProjectile();
+            }
+
             if(wavenumber>=1){
                     if(collision.GetComponent<OurEnemy>().transform.name=="Sphere(Clone)"
                         && GameObject.FindGameObjectWithTag("Weapon").transform.name!="gun"
@@ -66,16 +71,18 @@ public class Projectile : MonoBehaviour
         }
         if(collision.tag=="devil"){
         collision.GetComponent<Devil>().TakeDamage(damage);
-        //Devilscripthealth=GameObject.FindGameObjectWithTag("devil").GetComponent<Devil>().health;
-        //if (Devilscripthealth>=22){
-        //prefab = (GameObject)Resources.Load("ToonExplosion/Prefabs/smallDevil", typeof(GameObject));
-        //Instantiate(prefab,transform.position,Quaternion.identity);
+        if (Devilscripthealth<=18){
+        prefab = (GameObject)Resources.Load("ToonExplosion/Prefabs/smallDevil", typeof(GameObject));
+        //prefab1 = (GameObject)Resources.Load("ToonExplosion/Prefabs/smallDevil", typeof(GameObject));
+        //Devilscripthealth=GameObject.FindGameObjectWithTag("smalldevil").GetComponent<MeleeEnemy>().health;
+        Instantiate(prefab,transform.position,Quaternion.identity);
         DestroyProjectile();
         }
-
+        }
         if(collision.tag=="bomb"){
             explosion = (GameObject)Resources.Load("ToonExplosion/Prefabs/Explosion", typeof(GameObject));
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(collision.gameObject.transform.position,9.0f);
+            //Debug.Log(explosion);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(collision.gameObject.transform.position,8.0f);
             //Debug.Log(colliders);
             foreach (Collider2D col in colliders)
             {
@@ -90,3 +97,5 @@ public class Projectile : MonoBehaviour
             
         }   
 }
+
+
