@@ -32,13 +32,15 @@ public class OurEnemy : MonoBehaviour
      WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
 
-    private ScreenTransition screenTransition;
+    
 
         public virtual void Start(){
         player=GameObject.FindGameObjectWithTag("Player").transform;
-        screenTransition=FindObjectOfType<ScreenTransition>();
+    
         //StartCoRoutine(Scale());
     }
+
+    
 
     public float scalingFactor = 5.0f;
  
@@ -58,8 +60,6 @@ public class OurEnemy : MonoBehaviour
              yield return null;
              //yield return new WaitForSeconds(1.0f);
          }
-         
-     
      }
 
     public void smallDevilHit(int damageAmount){
@@ -70,7 +70,6 @@ public class OurEnemy : MonoBehaviour
         }
     
     public void YellowBoost(int boostAmount){
-
            WaveSpawnnerScript=GameObject.FindGameObjectWithTag("wave").GetComponent<WaveSpawnner>();
                 wavenumber=WaveSpawnnerScript.currentWaveIndex;
             

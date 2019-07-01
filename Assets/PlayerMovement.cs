@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
    WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
   public Animator hurtAnim;
-  private ScreenTransition screenTransition;
- 
+   private ScreenTransition screenTransition;
    private void Start(){
        anim=GetComponent<Animator>();
        rb=GetComponent<Rigidbody2D>();
@@ -35,8 +34,9 @@ public class PlayerMovement : MonoBehaviour
         else{
             anim.SetBool("ISRunning",false); 
         }
-
-              
+        //if(GameObject.FindGameObjectWithTag("Player")==null){
+            
+        //}
    }
     private void FixedUpdate(){ //any code related to physics goes inside this function
         rb.MovePosition(rb.position + moveAmount*Time.fixedDeltaTime);
@@ -48,13 +48,10 @@ public class PlayerMovement : MonoBehaviour
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
             Destroy(gameObject);
-            if(GameObject.FindGameObjectWithTag("Player")==null){
-            screenTransition.LoadScene("Lose");
-            }
+            Debug.Log("end");
+            screenTransition.LoadScene("Lose");   
             }
         }
-    
-
 
     //////////Change weapon is called///////////
     public void ChangeWeapon(Weapon WeaponToEquip){

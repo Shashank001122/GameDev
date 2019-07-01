@@ -77,33 +77,21 @@ public class WaveSpawnner : MonoBehaviour
             if(i==currentWave.count-1){
                 if(currentWaveIndex==1){
                 Transform barrelspot=GameObject.FindGameObjectWithTag("Player").transform;
-                float cameraFollowMinX=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().minX;
-                float cameraFollowMaxX=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().maxX;
-                float cameraFollowMinY=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().minY;
-                float cameraFollowMaxY=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().maxY;
-                float barrelspotX=(cameraFollowMaxX-cameraFollowMinX);
-                float barrelspotY=(cameraFollowMaxY-cameraFollowMinY);
-                
-                Instantiate(waves[1].barrel,barrelspot.position+new Vector3(barrelspotX,barrelspotY,0),barrelspot.rotation);
+                Transform cameraFollowposition=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().transform;
+                //Debug.Log(cameraFollowposition.position+barrelspot.position/2);
+                Instantiate(waves[1].barrel,(cameraFollowposition.position+barrelspot.position)/2+new Vector3(20.0f,20.0f,0),cameraFollowposition.rotation);
                 }
                 finishedSpawnning=true;
                 yield break;
             }
             else{
-            
                 finishedSpawnning=false;
                 
                 if(currentWaveIndex==1 && i==6){
-                    
                     Transform barrelspot=GameObject.FindGameObjectWithTag("Player").transform;
-                    float cameraFollowMinX=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().minX;
-                float cameraFollowMaxX=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().maxX;
-                float cameraFollowMinY=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().minY;
-                float cameraFollowMaxY=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().maxY;
-                float barrelspotX=(cameraFollowMaxX-cameraFollowMinX);
-                float barrelspotY=(cameraFollowMaxY-cameraFollowMinY);
-                
-                    Instantiate(waves[1].barrel,barrelspot.position+new Vector3(barrelspotX,barrelspotY,0),barrelspot.rotation);
+                    Transform cameraFollowposition=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().transform;
+                    //Debug.Log(cameraFollowposition.position+barrelspot.position/2);
+                    Instantiate(waves[1].barrel,(cameraFollowposition.position+barrelspot.position)/2+new Vector3(20.0f,20.0f,0),cameraFollowposition.rotation);
                 }  
             }    
             yield return new WaitForSeconds(currentWave.timeBetweenSpawns);//spawnning k time k beech 

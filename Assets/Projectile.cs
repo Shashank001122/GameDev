@@ -13,38 +13,62 @@ public class Projectile : MonoBehaviour
     public GameObject prefab;
     //public GameObject prefab1;
     public int Devilscripthealth;
+    private ScreenTransition screenTransition;
     
 
     private void Start(){
         //Destroy(gameObject,lifeTime);//if the lieftime is passed we destroy the projecticle..
         Invoke("DestroyProjectile",lifeTime);
+        screenTransition=FindObjectOfType<ScreenTransition>();
     }
 
     private void Update(){
         transform.Translate(Vector2.up*speed*Time.deltaTime); 
         //Destroy(this.gameObject,3);
     }  
-
-
     public void DestroyProjectile(){
         Destroy(gameObject);
         Instantiate(explosion,transform.position,Quaternion.identity);       
     }
 
+    IEnumerator Order()
+{
+   yield return new WaitForSeconds (3.0f);  
+}
+  
     //to detect collision..with enemy
     private void OnTriggerEnter2D(Collider2D collision){
         
-        if (collision.tag =="Enemy" && GameObject.FindGameObjectWithTag("Player") != null){
+        if (collision.tag =="Enemy" && GameObject.FindGameObjectWithTag("Player")!= null){
             
             //Changes being made
             WaveSpawnnerScript=GameObject.FindGameObjectWithTag("wave").GetComponent<WaveSpawnner>();
             wavenumber=WaveSpawnnerScript.currentWaveIndex;
             
             if(collision.GetComponent<OurEnemy>().transform.name=="smallDevil(Clone)"){
-                collision.GetComponent<OurEnemy>().smallDevilHit(damage); 
-                DestroyProjectile();
-            }
-
+                 if(GameObject.FindGameObjectWithTag("devil")==null){
+                    if(GameObject.FindGameObjectsWithTag("Enemy").Length!=0){
+                        collision.GetComponent<OurEnemy>().smallDevilHit(damage); 
+                        DestroyProjectile();
+                        StartCoroutine(Order());
+                        //Debug.Log("Devil die, enemy still remaining");
+                        screenTransition.LoadScene("Win");
+                    //}
+                    //else{
+                        //Debug.Log("Devil die, enemy die"+GameObject.FindGameObjectsWithTag("Enemy").Length);
+                        //if(GameObject.FindGameObjectsWithTag("Enemy").Length==0){
+                        //screenTransition.LoadScene("Win");
+                        }
+                    else{
+                        StartCoroutine(Order());
+                        screenTransition.LoadScene("Win");
+                    }
+                 }
+                    else{
+                        collision.GetComponent<OurEnemy>().smallDevilHit(damage); 
+                        DestroyProjectile();
+                    }
+                }
             if(wavenumber>=1){
                     if(collision.GetComponent<OurEnemy>().transform.name=="Sphere(Clone)"
                         && GameObject.FindGameObjectWithTag("Weapon").transform.name!="gun"

@@ -20,17 +20,14 @@ public class Devil : MonoBehaviour
         screenTransition=FindObjectOfType<ScreenTransition>();
     }
 
-IEnumerator Order()
-{
-   yield return new WaitForSeconds (3.0f);  
-}
-    
+  
 
     public void TakeDamage(int amount){
         
         health-=amount;
         if(health<=0){
             Destroy(this.gameObject);
+            /*
             if(GameObject.FindGameObjectsWithTag("Enemy").Length!=0){
             
                 foreach(GameObject child in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -43,12 +40,10 @@ IEnumerator Order()
             else{
                 screenTransition.LoadScene("Win");  
             }
+            */
         }
-
-
         if(health<=halfHealth){
-            anim.SetTrigger("stage2");
-            
+            anim.SetTrigger("stage2");   
         }
     }
 

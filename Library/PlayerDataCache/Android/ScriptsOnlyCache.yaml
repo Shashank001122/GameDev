@@ -149,15 +149,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10126}
     - Class: 114
-      Script: {instanceID: 10270}
+      Script: {instanceID: 10266}
     - Class: 114
-      Script: {instanceID: 10418}
+      Script: {instanceID: 10272}
     - Class: 114
-      Script: {instanceID: 10546}
+      Script: {instanceID: 10420}
     - Class: 114
       Script: {instanceID: 10548}
     - Class: 114
-      Script: {instanceID: 50958}
+      Script: {instanceID: 10550}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -228,33 +228,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10126}
     - Class: 114
-      Script: {instanceID: 10382}
+      Script: {instanceID: 10384}
     - Class: 114
-      Script: {instanceID: 10418}
+      Script: {instanceID: 10420}
     - Class: 114
-      Script: {instanceID: 10466}
+      Script: {instanceID: 10468}
     - Class: 114
-      Script: {instanceID: 10520}
+      Script: {instanceID: 10522}
     - Class: 114
-      Script: {instanceID: 10540}
-    - Class: 114
-      Script: {instanceID: 10546}
+      Script: {instanceID: 10542}
     - Class: 114
       Script: {instanceID: 10548}
     - Class: 114
-      Script: {instanceID: 10570}
+      Script: {instanceID: 10550}
     - Class: 114
-      Script: {instanceID: 10652}
+      Script: {instanceID: 10572}
     - Class: 114
-      Script: {instanceID: 10718}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10750}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 10796}
+      Script: {instanceID: 10752}
     - Class: 114
-      Script: {instanceID: 10826}
+      Script: {instanceID: 10798}
     - Class: 114
-      Script: {instanceID: 10892}
+      Script: {instanceID: 10828}
+    - Class: 114
+      Script: {instanceID: 10894}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -831,6 +831,12 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
+      Hash: cf1cf739131bfec9dd3d175cd47cd3cf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: smallDevil
+  - hash:
+      serializedVersion: 2
       Hash: 5cc96188bd697f0270da1243864f7f9a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1033,12 +1039,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: cf1cf739131bfec9dd3d175cd47cd3cf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: smallDevil
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

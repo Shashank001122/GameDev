@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jun 29 20:06:39 PDT 2019
+#Mon Jul 01 03:38:35 PDT 2019
 2.path=bin/Data/Managed/UnityEngine.CrashReportingModule.dll
 14.set=ASSET
 107.baseType=DIRECTORY

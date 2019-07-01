@@ -60,7 +60,7 @@ MonoBehaviour:
   health: 1
   player: {fileID: 0}
   go: {fileID: 0}
-  speed: 17
+  speed: 15
   timeBetweenAttacks: 1
   damage: 1
   pickUpChance: 0
