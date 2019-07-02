@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour
     
      public GameObject explosion;
      public float Timer = 5.0f;
+     public GameObject soundObject;
      public void DestroyProjectile(){
         //Destroy(gameObject);
         Instantiate(explosion,transform.position,Quaternion.identity);
@@ -39,7 +40,7 @@ public class Pickup : MonoBehaviour
             else{
             collision.GetComponent<PlayerMovement>().ChangeWeapon(WeaponToEquip);
             Destroy(gameObject);//destory pickup  
-              
+            Instantiate(soundObject,transform.position,transform.rotation);  
             }
         }        
         }

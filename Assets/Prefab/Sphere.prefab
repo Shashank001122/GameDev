@@ -523,6 +523,8 @@ MonoBehaviour:
   playerHealth: 0
   check: 0
   count: 0
+  soundObject: {fileID: 9046745828063492440, guid: 687004a3dcef63d4cb4c1a3c12d811fb,
+    type: 3}
   wavenumber: 0
   scalingFactor: 0
   stopDistance: 5

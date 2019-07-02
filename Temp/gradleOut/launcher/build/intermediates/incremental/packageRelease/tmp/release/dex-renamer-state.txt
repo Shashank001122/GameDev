@@ -1,4 +1,0 @@
-#Mon Jul 01 03:38:29 PDT 2019
-base.0=H\:\\Improvise\\Manish\\Temp\\gradleOut\\launcher\\build\\intermediates\\transforms\\dexMerger\\release\\0
-path.0=classes.dex
-renamed.0=classes.dex

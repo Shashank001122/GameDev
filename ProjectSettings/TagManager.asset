@@ -16,6 +16,7 @@ TagManager:
   - bomb
   - camera
   - smalldevil
+  - transitionpanel
   layers:
   - Default
   - TransparentFX

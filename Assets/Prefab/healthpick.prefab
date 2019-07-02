@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931730159648237483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.98037, y: 7.5506673, z: 0}
+  m_LocalPosition: {x: 14.293877, y: 2.0444243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,3 +121,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healamount: 1
+  soundObject: {fileID: 884074352795146310, guid: 64a5123566d3edf4d982eb6b7987d4ab,
+    type: 3}

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class OurEnemy : MonoBehaviour
 {
     public int health;
@@ -29,18 +28,14 @@ public class OurEnemy : MonoBehaviour
     public int playerHealth; 
     public bool check;
     public int count;
+    public GameObject soundObject;
      WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
 
-    
-
         public virtual void Start(){
         player=GameObject.FindGameObjectWithTag("Player").transform;
-    
         //StartCoRoutine(Scale());
     }
-
-    
 
     public float scalingFactor = 5.0f;
  
@@ -65,7 +60,9 @@ public class OurEnemy : MonoBehaviour
     public void smallDevilHit(int damageAmount){
         health-=damageAmount;
                     if(health<=0){
+                         
                          Destroy(gameObject);
+                         Instantiate(soundObject,transform.position,transform.rotation);
                     }
         }
     
@@ -90,6 +87,8 @@ public class OurEnemy : MonoBehaviour
                     health-=boostAmount;
                     if(health<=0){
                          Destroy(gameObject);
+                         //orange wala prefab
+                          Instantiate(soundObject,transform.position,transform.rotation);
                     }
         }
     } 
@@ -97,6 +96,7 @@ public class OurEnemy : MonoBehaviour
     public void TakeDamage(int damageAmount){
         if(GameObject.FindGameObjectWithTag("Player")){
         health-=damageAmount;
+        
         //Debug.Log("Health"+gameObject.health);
         mainweapon=GameObject.FindGameObjectWithTag("Weapon");
         if (health<=0){
@@ -108,6 +108,8 @@ public class OurEnemy : MonoBehaviour
                         if(mainweapon.transform.name=="gun"){
                             //Debug.Log("hit");
                             Destroy(gameObject);
+                            
+                             Instantiate(soundObject,transform.position,transform.rotation);
                             
                         }
                 }   
@@ -145,8 +147,7 @@ public class OurEnemy : MonoBehaviour
                     randomPickup=pickups[2];
                     randomPickup.transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;
                     Instantiate(randomPickup,transform.position,transform.rotation);
-                }
-                            
+                }                            
         }
             }
     int randHealth=Random.Range(0,101);
@@ -158,10 +159,11 @@ public class OurEnemy : MonoBehaviour
         Instantiate(healthPickup,transform.position,transform.rotation);
     }
     }
-     Destroy(gameObject);
-
+    
+    Destroy(gameObject);
+    Instantiate(soundObject,transform.position,transform.rotation);
     }
-        }
+    }
 }
 }
 }

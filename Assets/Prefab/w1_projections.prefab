@@ -114,8 +114,9 @@ MonoBehaviour:
   damage: 2
   wavenumber: 0
   prefab: {fileID: 0}
-  prefab1: {fileID: 0}
   Devilscripthealth: 0
+  soundObject: {fileID: 7888436633998800944, guid: c7bf6c15f22432b4db349eccfa14474d,
+    type: 3}
 --- !u!61 &-4213338887762735453
 BoxCollider2D:
   m_ObjectHideFlags: 0

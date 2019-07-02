@@ -12,6 +12,7 @@ public class Devil : MonoBehaviour
     public int damage;
     private int halfHealth;
     private Animator anim;
+    public GameObject soundObject;
     //private GameObject radial;    
     private ScreenTransition screenTransition;
     private void Start(){
@@ -27,6 +28,7 @@ public class Devil : MonoBehaviour
         health-=amount;
         if(health<=0){
             Destroy(this.gameObject);
+            Instantiate(soundObject,transform.position,transform.rotation);
             /*
             if(GameObject.FindGameObjectsWithTag("Enemy").Length!=0){
             

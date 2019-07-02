@@ -11,16 +11,15 @@ public class Projectile : MonoBehaviour
     WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
     public GameObject prefab;
-    //public GameObject prefab1;
     public int Devilscripthealth;
     private ScreenTransition screenTransition;
-    
+    public GameObject soundObject;
 
     private void Start(){
-        //Destroy(gameObject,lifeTime);//if the lieftime is passed we destroy the projecticle..
         Invoke("DestroyProjectile",lifeTime);
         screenTransition=FindObjectOfType<ScreenTransition>();
-    }
+        Instantiate(soundObject,transform.position,transform.rotation);
+    } 
 
     private void Update(){
         transform.Translate(Vector2.up*speed*Time.deltaTime); 

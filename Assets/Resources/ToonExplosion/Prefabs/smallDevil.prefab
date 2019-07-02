@@ -41,6 +41,8 @@ MonoBehaviour:
   playerHealth: 0
   check: 0
   count: 0
+  soundObject: {fileID: 9046745828063492440, guid: 790f9a5820d9e6c449b2c84a3b0847af,
+    type: 3}
   wavenumber: 0
   scalingFactor: 5
   stopDistance: 0
@@ -75,6 +77,8 @@ MonoBehaviour:
   playerHealth: 0
   check: 0
   count: 0
+  soundObject: {fileID: 9046745828063492440, guid: 687004a3dcef63d4cb4c1a3c12d811fb,
+    type: 3}
   wavenumber: 0
   scalingFactor: 5
   stopDistance: 2

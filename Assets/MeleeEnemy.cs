@@ -24,7 +24,12 @@ public class MeleeEnemy : OurEnemy
         }
         
     IEnumerator Attack(){
+     if(player==null){
+         yield break;
+     }
+     
      player.GetComponent<PlayerMovement>().TakeDamage(damage);
+     
      Vector2 originalPosition=transform.position;
      Vector2 targetPosition=player.position;
 

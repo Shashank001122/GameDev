@@ -4,7 +4,6 @@ ScriptsOnlyBuild:
     - CameraFollow
     - ChaseBehaviour
     - Devil
-    - EnemyBullet
     - FixedJoystick
     - HealthBar
     - HealthBarSummoner
@@ -15,7 +14,6 @@ ScriptsOnlyBuild:
     - Pickup
     - PlayerMovement
     - Projectile
-    - RangedEnemy
     - ScreenTransition
     - Summoner
     - WaveSpawnner
@@ -234,8 +232,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10468}
     - Class: 114
-      Script: {instanceID: 10522}
-    - Class: 114
       Script: {instanceID: 10542}
     - Class: 114
       Script: {instanceID: 10548}
@@ -251,8 +247,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10752}
     - Class: 114
       Script: {instanceID: 10798}
-    - Class: 114
-      Script: {instanceID: 10828}
     - Class: 114
       Script: {instanceID: 10894}
     - Class: 115
@@ -1043,6 +1037,6 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
-  - Assets/Scenes/Win.unity
   - Assets/Scenes/Lose.unity
+  - Assets/Scenes/Win.unity
   playerPath: H:/Improvise/Manish/Revengers.apk

@@ -376,6 +376,8 @@ MonoBehaviour:
   playerHealth: 0
   check: 0
   count: 0
+  soundObject: {fileID: 9046745828063492440, guid: 116a1032bacfc91439058f4eff543cbb,
+    type: 3}
   wavenumber: 0
   scalingFactor: 4
   minX: -8.76
@@ -385,7 +387,7 @@ MonoBehaviour:
   attackSpeed: 0
   stopDistance: 0
   attackTime: 0
-  timeBetweenSummons: 3
+  timeBetweenSummons: 2.5
   EnemyToSummon: {fileID: 2137598784180006623, guid: 0039eb8a0c40143bb8d367287ac9a650,
     type: 3}
 --- !u!1 &8566571639237026454

@@ -263,6 +263,10 @@ MonoBehaviour:
   explosion: {fileID: 139366}
   damage: 0
   wavenumber: 0
+  prefab: {fileID: 0}
+  Devilscripthealth: 0
+  soundObject: {fileID: 7888436633998800944, guid: 6dcf08c039a1e7241afa760d2764203d,
+    type: 3}
 --- !u!1 &162364
 GameObject:
   m_ObjectHideFlags: 0

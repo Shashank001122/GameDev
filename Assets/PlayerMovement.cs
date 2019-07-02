@@ -15,14 +15,14 @@ public class PlayerMovement : MonoBehaviour
    public Sprite fullHeart;
    public Sprite emptyHeart;
    WaveSpawnner WaveSpawnnerScript;
-    public int wavenumber;
-  public Animator hurtAnim;
-   private ScreenTransition screenTransition;
+   public int wavenumber;
+   public Animator hurtAnim;
+   
    private void Start(){
        anim=GetComponent<Animator>();
        rb=GetComponent<Rigidbody2D>();
-       screenTransition=FindObjectOfType<ScreenTransition>();
-   }
+       
+   }    
 
    private void Update(){
        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
@@ -34,9 +34,6 @@ public class PlayerMovement : MonoBehaviour
         else{
             anim.SetBool("ISRunning",false); 
         }
-        //if(GameObject.FindGameObjectWithTag("Player")==null){
-            
-        //}
    }
     private void FixedUpdate(){ //any code related to physics goes inside this function
         rb.MovePosition(rb.position + moveAmount*Time.fixedDeltaTime);
@@ -48,9 +45,11 @@ public class PlayerMovement : MonoBehaviour
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
             Destroy(gameObject);
-            Debug.Log("end");
+            ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
+
             screenTransition.LoadScene("Lose");   
-            }
+            
+        }
         }
 
     //////////Change weapon is called///////////
