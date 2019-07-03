@@ -3,7 +3,9 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CameraFollow
     - ChaseBehaviour
+    - Destroyer
     - Devil
+    - EnemyBullet
     - FixedJoystick
     - HealthBar
     - HealthBarSummoner
@@ -14,6 +16,7 @@ ScriptsOnlyBuild:
     - Pickup
     - PlayerMovement
     - Projectile
+    - RangedEnemy
     - ScreenTransition
     - Summoner
     - WaveSpawnner
@@ -122,6 +125,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -156,6 +163,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10548}
     - Class: 114
       Script: {instanceID: 10550}
+    - Class: 114
+      Script: {instanceID: 10912}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -192,6 +201,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -232,6 +245,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10468}
     - Class: 114
+      Script: {instanceID: 10522}
+    - Class: 114
       Script: {instanceID: 10542}
     - Class: 114
       Script: {instanceID: 10548}
@@ -248,7 +263,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10798}
     - Class: 114
+      Script: {instanceID: 10828}
+    - Class: 114
       Script: {instanceID: 10894}
+    - Class: 114
+      Script: {instanceID: 10912}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -789,7 +808,7 @@ ScriptsOnlyBuild:
     className: ChaseBehaviour
   - hash:
       serializedVersion: 2
-      Hash: cbd60ec669164ed2588497cb04bcdedc
+      Hash: 9b996040c290e74a18f75ff702f95206
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Projectile
@@ -825,13 +844,13 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: cf1cf739131bfec9dd3d175cd47cd3cf
+      Hash: 89fb592c2e3bfba3cc5887210d03278e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: smallDevil
   - hash:
       serializedVersion: 2
-      Hash: 5cc96188bd697f0270da1243864f7f9a
+      Hash: 4cfb30d2ec29cca2d073eee650be217f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OurEnemy
@@ -861,13 +880,13 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: b9cb6c5e39988ea0338395f849a6aaff
+      Hash: a41277aac18205c64e926316d89c989e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pickup
   - hash:
       serializedVersion: 2
-      Hash: cf1cf739131bfec9dd3d175cd47cd3cf
+      Hash: 89fb592c2e3bfba3cc5887210d03278e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MeleeEnemy
@@ -909,7 +928,7 @@ ScriptsOnlyBuild:
     className: FixedJoystick
   - hash:
       serializedVersion: 2
-      Hash: ad7462b9c2000e63f067437014891b91
+      Hash: 815f7268b5a99aedf4615c4017c90e9c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: healthpick
@@ -921,7 +940,7 @@ ScriptsOnlyBuild:
     className: HealthBar
   - hash:
       serializedVersion: 2
-      Hash: 983958c7c6dcd60cf3ba8150ed5ff7bc
+      Hash: bc7f2e8a7139a8802f00d9cde006df14
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MyJoyStick
@@ -957,7 +976,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 95b06408bf3cece43469f345bf016dc7
+      Hash: 2fa5a8eda25c7c4646f8572eda50aa7b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -975,13 +994,13 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 6eae9fb06059a4f0221a86d7aec51d03
+      Hash: 2c22507ae927c5be9f2116b65e3dba4b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Summoner
   - hash:
       serializedVersion: 2
-      Hash: f9e9c7c2fe29657157f68a06f3a1eea6
+      Hash: 0b60665d35cf2c4b0ce8c941998a07b0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RangedEnemy
@@ -1017,7 +1036,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: deaeef755249719566be975d1bf520a2
+      Hash: 76b3a8bd6a52574d022f28d5e2dd03e2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Devil
@@ -1029,10 +1048,22 @@ ScriptsOnlyBuild:
     className: VariableJoystick
   - hash:
       serializedVersion: 2
+      Hash: 5afb4fa138af1dd0d561b85cac9458ea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Destroyer
+  - hash:
+      serializedVersion: 2
       Hash: 686dc5ae0550d5cc850c0d1dcce4c018
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 0880b30b97266268dd6c5edaaf8c4f61
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RandomSound
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

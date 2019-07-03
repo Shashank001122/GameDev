@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
    WaveSpawnner WaveSpawnnerScript;
    public int wavenumber;
    public Animator hurtAnim;
+   public GameObject soundObject;
    
    private void Start(){
        anim=GetComponent<Animator>();
@@ -44,11 +45,10 @@ public class PlayerMovement : MonoBehaviour
         UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
-            Destroy(gameObject);
+            Destroy(gameObject,3);
+            Instantiate(soundObject,transform.position,transform.rotation);
             ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
-
             screenTransition.LoadScene("Lose");   
-            
         }
         }
 
@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
         Instantiate(WeaponToEquip,transform.position,transform.rotation,transform);
-        //Debug.Log("From player movemenet weapon assigned"+WeaponToEquip);
 
     } 
 

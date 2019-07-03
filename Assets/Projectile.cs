@@ -104,9 +104,9 @@ public class Projectile : MonoBehaviour
         }
         if(collision.tag=="bomb"){
             explosion = (GameObject)Resources.Load("ToonExplosion/Prefabs/Explosion", typeof(GameObject));
-            //Debug.Log(explosion);
+            
             Collider2D[] colliders = Physics2D.OverlapCircleAll(collision.gameObject.transform.position,8.0f);
-            //Debug.Log(colliders);
+            
             foreach (Collider2D col in colliders)
             {
                 if (col.tag == "Enemy")

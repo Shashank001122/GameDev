@@ -15,16 +15,28 @@ public class Devil : MonoBehaviour
     public GameObject soundObject;
     //private GameObject radial;    
     private ScreenTransition screenTransition;
+    
+    public GameObject EnemyBullet;
+    public Transform player;
+    public Transform shotPoint;
+
     private void Start(){
         halfHealth=health/2;
+        player=GameObject.FindGameObjectWithTag("Player").transform;
         anim=GetComponent<Animator>();
         screenTransition=FindObjectOfType<ScreenTransition>();
     }
 
-  
-
-    public void TakeDamage(int amount){
-        
+    public void RangedAttack(){
+        if(player!=null){
+        Vector2 direction=player.position-shotPoint.position; 
+        float angle=Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg;
+        Quaternion rotation =Quaternion.AngleAxis(angle-90,Vector3.forward);
+        shotPoint.rotation=rotation;
+        Instantiate(EnemyBullet,shotPoint.position,shotPoint.rotation);
+        }
+    }
+    public void TakeDamage(int amount){   
         health-=amount;
         if(health<=0){
             Destroy(this.gameObject);

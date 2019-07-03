@@ -53,14 +53,13 @@ public class OurEnemy : MonoBehaviour
              currentTime += Time.deltaTime;
              //Debug.Log(currentTime);
              yield return null;
-             //yield return new WaitForSeconds(1.0f);
+
          }
      }
 
     public void smallDevilHit(int damageAmount){
         health-=damageAmount;
-                    if(health<=0){
-                         
+                    if(health<=0){   
                          Destroy(gameObject);
                          Instantiate(soundObject,transform.position,transform.rotation);
                     }
@@ -75,8 +74,7 @@ public class OurEnemy : MonoBehaviour
                 if (randomNumber<pickUpChance){ 
                 if(GameObject.FindGameObjectWithTag("Weapon").transform.name !="gun(Clone)"){
                     pickups[1].transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;    
-                    //pickups[1].transform.position=GameObject.FindGameObjectWithTag("Player").transform.position+0.3f*
-                    //(this.gameObject.transform.position-GameObject.FindGameObjectWithTag("Player").transform.position)/2;    
+    
                     Instantiate(pickups[1],pickups[1].transform.position,transform.rotation);
                     
                     StartCoroutine(Scale(4.0f));
@@ -97,7 +95,6 @@ public class OurEnemy : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("Player")){
         health-=damageAmount;
         
-        //Debug.Log("Health"+gameObject.health);
         mainweapon=GameObject.FindGameObjectWithTag("Weapon");
         if (health<=0){
                 WaveSpawnnerScript=GameObject.FindGameObjectWithTag("wave").GetComponent<WaveSpawnner>();
@@ -106,7 +103,7 @@ public class OurEnemy : MonoBehaviour
                 
                     if(wavenumber==0){
                         if(mainweapon.transform.name=="gun"){
-                            //Debug.Log("hit");
+        
                             Destroy(gameObject);
                             
                              Instantiate(soundObject,transform.position,transform.rotation);
@@ -115,7 +112,6 @@ public class OurEnemy : MonoBehaviour
                 }   
                     
             if(wavenumber>=1){
-            //if(WaveSpawnnerScript.countEnemy==1){    
                 
             int randomNumber=Random.Range(0,101);
             if (randomNumber<pickUpChance){  
@@ -136,7 +132,7 @@ public class OurEnemy : MonoBehaviour
                     
                     if(gameObject.transform.name!="Sphere(Clone)"){
                         randomPickup=pickups[Random.Range(1,pickups.Length-1)];
-                        //randomPickup.transform.position=this.gameObject.transform.position+new Vector3(2f,2f,0f);
+                        
                     randomPickup.transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;
                         
                         Instantiate(randomPickup,randomPickup.transform.position,transform.rotation);

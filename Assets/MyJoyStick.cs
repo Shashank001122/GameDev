@@ -1,10 +1,8 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 //using UnityStandardAssets.CrossPlatformInput;
-
 public class MyJoyStick : MonoBehaviour
 {
    public float speed;
@@ -18,22 +16,18 @@ public class MyJoyStick : MonoBehaviour
    public Sprite emptyHeart;
    WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
-  private ScreenTransition screenTransition;
     public Joystick joystick;
     //public float moveForce=1000f;
     public bool check;
     public Animator hurtAnim;
-
-   private void Start(){
+    public GameObject soundObject;
+    private void Start(){
        anim=GetComponent<Animator>();
        rb=GetComponent<Rigidbody2D>();
-       joystick=GameObject.FindObjectOfType<Joystick>();   
-       //Debug.Log(joystick);
-       screenTransition=FindObjectOfType<ScreenTransition>();
-   }
+       joystick=GameObject.FindObjectOfType<Joystick>();          
+    }
   
- 
-   private void Update(){
+    private void Update(){
         //rb.velocity=new Vector2(joystick.Horizontal*speed,joystick.Vertical*speed);    
         Vector2 moveInput=new Vector2(joystick.Horizontal,joystick.Vertical);
         moveAmount=moveInput*speed;
@@ -46,12 +40,12 @@ public class MyJoyStick : MonoBehaviour
             anim.SetBool("ISRunning",false);
             check=false; 
         }
-   }
+    }
 
    private void FixedUpdate(){ //any code related to physics goes inside this function
        rb.MovePosition(rb.position + moveAmount*Time.fixedDeltaTime);
     }
-
+/* 
     public void TakeDamage(int damageAmount){
         health-=damageAmount;
         UpdateHealthUI(health);
@@ -61,7 +55,18 @@ public class MyJoyStick : MonoBehaviour
             screenTransition.LoadScene("Lose");
         }
     }
-
+*/
+public void TakeDamage(int damageAmount){
+        health-=damageAmount;
+        UpdateHealthUI(health);
+        hurtAnim.SetTrigger("hurt");
+        if (health<=0){
+            Destroy(gameObject);
+            Instantiate(soundObject,transform.position,transform.rotation);
+            ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
+            screenTransition.LoadScene("Lose");           
+        }
+        }
 
     //////////Change weapon is called///////////
     public void ChangeWeapon(Weapon WeaponToEquip){
