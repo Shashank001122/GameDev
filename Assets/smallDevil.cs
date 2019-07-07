@@ -14,10 +14,14 @@ public class smallDevil : OurEnemy
                          Destroy(gameObject);
                     }
         }
-    
+    public void Start(){
+        player=GameObject.FindGameObjectWithTag("smalldevilplayer").transform;
+        smallPlayer=GameObject.FindGameObjectWithTag("smalldevilplayer").transform;
+    }
+
     private void Update(){
-    
-        if(player!=null){
+        
+        if(player!=null || smallPlayer!=null){
             if(Vector2.Distance(transform.position,player.position)>stopDistance){
                 transform.position=Vector2.MoveTowards(transform.position,player.position,speed*Time.deltaTime);
             }
@@ -34,6 +38,7 @@ public class smallDevil : OurEnemy
     IEnumerator Attack(){
 
      player.GetComponent<PlayerMovement>().TakeDamage(damage);
+     smallPlayer.GetComponent<PlayerMovement>().TakeDamage(damage);
      Vector2 originalPosition=transform.position;
      Vector2 targetPosition=player.position;
 

@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
    private void Start(){
        anim=GetComponent<Animator>();
        rb=GetComponent<Rigidbody2D>();
-       
    }    
 
    private void Update(){
@@ -45,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
         UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
-            Destroy(gameObject,3);
-            Instantiate(soundObject,transform.position,transform.rotation);
+            Destroy(gameObject,1);
+            //Instantiate(soundObject,transform.position,transform.rotation);
             ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
             screenTransition.LoadScene("Lose");   
         }
@@ -76,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
         Instantiate(WeaponToEquip,transform.position,transform.rotation,transform);
-
     } 
 
     void UpdateHealthUI(int currentHealth){

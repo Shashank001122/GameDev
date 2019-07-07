@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class Global{
+    public static int count=0;
+}
 public class OurEnemy : MonoBehaviour
 {
     public int health;
+    GameObject temp_weapon;
 
     [HideInInspector]
     public Transform player;
+    public Transform smallPlayer;
 
     [SerializeField]
     private GameObject go;
@@ -31,9 +37,13 @@ public class OurEnemy : MonoBehaviour
     public GameObject soundObject;
      WaveSpawnner WaveSpawnnerScript;
     public int wavenumber;
+    public GameObject prefab;
+    public Vector2 positionEnemyDie;
+    public GameObject bloodsplash;
 
         public virtual void Start(){
         player=GameObject.FindGameObjectWithTag("Player").transform;
+        
         //StartCoRoutine(Scale());
     }
 
@@ -45,26 +55,84 @@ public class OurEnemy : MonoBehaviour
      {        
         float currentTime = 0.0f;
          Vector3 originalScale = gameObject.transform.localScale;
-         Vector3 destinationScale = new Vector3(2.0f, 2.0f, 2.0f);
-         
+         Vector3 destinationScale = new Vector3(2.5f, 2.5f, 2.5f);
          while(currentTime<time){
          gameObject.transform.localScale = Vector3.Lerp(originalScale, destinationScale, currentTime /
             time);
              currentTime += Time.deltaTime;
-             //Debug.Log(currentTime);
              yield return null;
-
          }
-     }
+     }  
 
-    public void smallDevilHit(int damageAmount){
+
+    IEnumerator Order()
+    {
+   yield return new WaitForSeconds (3.0f);  
+    }
+
+    public void smallDevilHit(int damageAmount, Collider2D collision, GameObject proj){
         health-=damageAmount;
-                    if(health<=0){   
-                         Destroy(gameObject);
-                         Instantiate(soundObject,transform.position,transform.rotation);
-                    }
+        GameObject mainweapon=GameObject.FindGameObjectWithTag("Weapon");
+        Debug.Log(proj);
+        
+        if(health<=0 && mainweapon.transform.name!="finalweapon(Clone)"){
+                temp_weapon=mainweapon;
+                Instantiate(soundObject,transform.position,transform.rotation);
+                int randomNumber=Random.Range(0,101);
+                if (randomNumber<pickUpChance){ 
+                pickups[0].transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;
+                
+
+            if(proj.transform.name=="flames(Clone)"){
+            GameObject prefab1 = (GameObject)Resources.Load("ToonExplosion/Prefabs/flamee_1", typeof(GameObject));
+            
+            pickups[0].GetComponent<Pickup>().typeofprojectile=prefab1;
+            }
+                
+                 if(proj.transform.name=="w1_projections(Clone)"){
+            GameObject prefab1 = (GameObject)Resources.Load("ToonExplosion/Prefabs/w1_projections_1", typeof(GameObject));
+            pickups[0].GetComponent<Pickup>().typeofprojectile=prefab1;
+            }
+            
+            if(proj.transform.name=="w2_projection(Clone)"){
+            GameObject prefab1 = (GameObject)Resources.Load("ToonExplosion/Prefabs/w2_projection_2", typeof(GameObject));
+            pickups[0].GetComponent<Pickup>().typeofprojectile=prefab1;
+            }
+
+            if(proj.transform.name=="w3_projection(Clone)"){
+            GameObject prefab1 = (GameObject)Resources.Load("ToonExplosion/Prefabs/w3_projection_3", typeof(GameObject));
+            pickups[0].GetComponent<Pickup>().typeofprojectile=prefab1;
+            }
+                
+                Instantiate(pickups[0],pickups[0].transform.position+new Vector3(7.0f,7.0f,0.0f),pickups[0].transform.rotation);
+                Global.count=1;
+                }
+            Destroy(gameObject);    
         }
+
+        if(health<=0 && mainweapon.transform.name=="finalweapon(Clone)" && Global.count==1){    
+            Vector2 pos=collision.transform.position;
+            Quaternion rot=collision.transform.rotation;    
+            Instantiate(bloodsplash,transform.position,transform.rotation);
+            StartCoroutine(Order());
+            prefab.transform.position=pos;
+            //prefab.GetComponent<smallplayer>().EnemyBullet=proj;  
+            //Debug.Log(prefab.GetComponent<smallplayer>().EnemyBullet);
+            Instantiate(prefab,prefab.transform.position,prefab.transform.rotation);
+            Instantiate(soundObject,transform.position,transform.rotation);
+            //GameObject smallPlayer=GameObject.FindGameObjectWithTag("smalldevilplayer");
+            Global.count=2;
+            Destroy(gameObject);
+            
+        }
+        if(health<=0 && mainweapon.transform.name=="finalweapon(Clone)" && Global.count==2){
+            Debug.Log("finalweapon possessed"+Global.count);
+                Instantiate(soundObject,transform.position,transform.rotation);
+                Destroy(gameObject);    
+        }
+    }   
     
+
     public void YellowBoost(int boostAmount){
            WaveSpawnnerScript=GameObject.FindGameObjectWithTag("wave").GetComponent<WaveSpawnner>();
                 wavenumber=WaveSpawnnerScript.currentWaveIndex;
@@ -100,22 +168,16 @@ public class OurEnemy : MonoBehaviour
                 WaveSpawnnerScript=GameObject.FindGameObjectWithTag("wave").GetComponent<WaveSpawnner>();
                 wavenumber=WaveSpawnnerScript.currentWaveIndex;
                 index=0;
-                
                     if(wavenumber==0){
                         if(mainweapon.transform.name=="gun"){
         
                             Destroy(gameObject);
-                            
-                             Instantiate(soundObject,transform.position,transform.rotation);
-                            
-                        }
-                }   
-                    
-            if(wavenumber>=1){
-                
+                            Instantiate(soundObject,transform.position,transform.rotation);
+                   }
+                }                       
+            if(wavenumber>=1 && gameObject.transform.name!="smallDevil(Clone)"){    
             int randomNumber=Random.Range(0,101);
             if (randomNumber<pickUpChance){  
-               
                 if((wavenumber==1 && mainweapon.transform.name=="gun(Clone)") || 
                 (wavenumber==1 && mainweapon.transform.name=="gun"))
                 {    

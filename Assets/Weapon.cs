@@ -58,7 +58,8 @@ public class Weapon : MonoBehaviour
         if( GameObject.FindGameObjectWithTag("Weapon").transform.name=="weapon_1(Clone)"||
             GameObject.FindGameObjectWithTag("Weapon").transform.name=="weapon_2(Clone)"||
             GameObject.FindGameObjectWithTag("Weapon").transform.name=="weapon_3(Clone)"||
-            GameObject.FindGameObjectWithTag("Weapon").transform.name=="gun(Clone)"){
+            GameObject.FindGameObjectWithTag("Weapon").transform.name=="gun(Clone)" ||
+            GameObject.FindGameObjectWithTag("Weapon").transform.name=="finalweapon(Clone)"){
            
            GameObject obj=GameObject.FindGameObjectWithTag("weaponjoystick");
            joystick2=obj.GetComponent<Joystick>();
@@ -72,7 +73,7 @@ public class Weapon : MonoBehaviour
             //transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
             Quaternion rotation =Quaternion.AngleAxis(angle-90,Vector3.forward);
             transform.rotation=rotation;
-            bool chk=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>().check;
+            //bool chk=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>().check;
         
             if (Time.time>=shotTime){
                 Instantiate(projectile,shotPoint.position,transform.rotation);

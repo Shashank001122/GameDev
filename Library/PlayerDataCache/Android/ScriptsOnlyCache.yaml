@@ -23,7 +23,6 @@ ScriptsOnlyBuild:
     - Weapon
     - healthpick
     - rpb
-    - smallDevil
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -152,19 +151,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9982}
     - Class: 114
-      Script: {instanceID: 10126}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10266}
+      Script: {instanceID: 10274}
     - Class: 114
-      Script: {instanceID: 10272}
-    - Class: 114
-      Script: {instanceID: 10420}
-    - Class: 114
-      Script: {instanceID: 10548}
+      Script: {instanceID: 10422}
     - Class: 114
       Script: {instanceID: 10550}
     - Class: 114
-      Script: {instanceID: 10912}
+      Script: {instanceID: 10552}
+    - Class: 114
+      Script: {instanceID: 10914}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -237,37 +234,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10072}
     - Class: 114
-      Script: {instanceID: 10126}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10384}
+      Script: {instanceID: 10386}
     - Class: 114
-      Script: {instanceID: 10420}
+      Script: {instanceID: 10422}
     - Class: 114
-      Script: {instanceID: 10468}
+      Script: {instanceID: 10470}
     - Class: 114
-      Script: {instanceID: 10522}
+      Script: {instanceID: 10524}
     - Class: 114
-      Script: {instanceID: 10542}
-    - Class: 114
-      Script: {instanceID: 10548}
+      Script: {instanceID: 10544}
     - Class: 114
       Script: {instanceID: 10550}
     - Class: 114
-      Script: {instanceID: 10572}
+      Script: {instanceID: 10552}
     - Class: 114
-      Script: {instanceID: 10654}
+      Script: {instanceID: 10574}
     - Class: 114
-      Script: {instanceID: 10720}
+      Script: {instanceID: 10656}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10722}
     - Class: 114
-      Script: {instanceID: 10798}
+      Script: {instanceID: 10754}
     - Class: 114
-      Script: {instanceID: 10828}
+      Script: {instanceID: 10800}
     - Class: 114
-      Script: {instanceID: 10894}
+      Script: {instanceID: 10830}
     - Class: 114
-      Script: {instanceID: 10912}
+      Script: {instanceID: 10896}
+    - Class: 114
+      Script: {instanceID: 10914}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -808,6 +805,12 @@ ScriptsOnlyBuild:
     className: ChaseBehaviour
   - hash:
       serializedVersion: 2
+      Hash: 0880b30b97266268dd6c5edaaf8c4f61
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RandomSound
+  - hash:
+      serializedVersion: 2
       Hash: 9b996040c290e74a18f75ff702f95206
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1036,7 +1039,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 76b3a8bd6a52574d022f28d5e2dd03e2
+      Hash: fe0410eeff7d16d48294d42f1182db25
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Devil
@@ -1058,12 +1061,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: 0880b30b97266268dd6c5edaaf8c4f61
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RandomSound
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

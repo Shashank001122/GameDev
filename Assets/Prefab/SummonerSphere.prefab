@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b5f1cdecd22b049922aaeac38be243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 12
   player: {fileID: 0}
   go: {fileID: 0}
   speed: 10
@@ -379,6 +379,9 @@ MonoBehaviour:
   soundObject: {fileID: 9046745828063492440, guid: 116a1032bacfc91439058f4eff543cbb,
     type: 3}
   wavenumber: 0
+  prefab: {fileID: 0}
+  positionEnemyDie: {x: 0, y: 0}
+  bloodsplash: {fileID: 0}
   scalingFactor: 4
   minX: -8.76
   maxX: 4.23
@@ -387,7 +390,7 @@ MonoBehaviour:
   attackSpeed: 0
   stopDistance: 0
   attackTime: 0
-  timeBetweenSummons: 2
+  timeBetweenSummons: 2.5
   EnemyToSummon: {fileID: 2137598784180006623, guid: 0039eb8a0c40143bb8d367287ac9a650,
     type: 3}
 --- !u!1 &8566571639237026454

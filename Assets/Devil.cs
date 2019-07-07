@@ -21,7 +21,7 @@ public class Devil : MonoBehaviour
     public Transform shotPoint;
 
     private void Start(){
-        halfHealth=health/2;
+        halfHealth=health*3/5;
         player=GameObject.FindGameObjectWithTag("Player").transform;
         anim=GetComponent<Animator>();
         screenTransition=FindObjectOfType<ScreenTransition>();

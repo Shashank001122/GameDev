@@ -12,13 +12,14 @@ public class WaveSpawnner : MonoBehaviour
         public float timeBetweenSpawns;
 
     }
+    public GameObject barrels;// barrels is an array of transforms
     public Wave[] waves;
     public Transform[] spawnPoints;
     public Wave currentWave;
     public int currentWaveIndex;
     private Transform player;
     public float timeBetweenWaves;
-    
+    public Vector3 posss;
     private bool  finishedSpawnning;
     
     public GameObject Devil;
@@ -32,8 +33,7 @@ public class WaveSpawnner : MonoBehaviour
     }
 
     IEnumerator StartNextWave(int index){
-        yield return new WaitForSeconds(timeBetweenWaves);//2 seconds ruka phir agal coroutine..
-        
+        yield return new WaitForSeconds(timeBetweenWaves);//2 seconds ruka phir agal coroutine..        
         StartCoroutine(SpawnWave(index));    
     }  
     IEnumerator SpawnWave(int index){
@@ -46,13 +46,14 @@ public class WaveSpawnner : MonoBehaviour
             }
             if(currentWaveIndex==1){            
             OurEnemy randomEnemy=currentWave.enemies[Random.Range(0,currentWave.enemies.Length)];
+            //koi bhi enemy choose hosakta hain do mese..
             if(countEnemy==8){
                 randomEnemy=currentWave.enemies[8];
             }
             if(countEnemy==0){
                 randomEnemy=currentWave.enemies[0];
             }
-
+            
             Transform randomSpot=spawnPoints[Random.Range(0,spawnPoints.Length-1)];
             
             Instantiate(randomEnemy,randomSpot.transform.position,randomSpot.rotation);
@@ -77,9 +78,10 @@ public class WaveSpawnner : MonoBehaviour
             if(i==currentWave.count-1){
                 if(currentWaveIndex==1){
                 Transform barrelspot=GameObject.FindGameObjectWithTag("Player").transform;
+                
                 Transform cameraFollowposition=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().transform;
                 //Debug.Log(cameraFollowposition.position+barrelspot.position/2);
-                Instantiate(waves[1].barrel,(cameraFollowposition.position+barrelspot.position)/2+new Vector3(20.0f,20.0f,0),cameraFollowposition.rotation);
+                Instantiate(waves[1].barrel,(barrelspot.position+2*cameraFollowposition.position),cameraFollowposition.rotation);
                 }
                 finishedSpawnning=true;
                 yield break;
@@ -87,18 +89,19 @@ public class WaveSpawnner : MonoBehaviour
             else{
                 finishedSpawnning=false;
                 
-                if(currentWaveIndex==1 && i==6){
-                    Transform barrelspot=GameObject.FindGameObjectWithTag("Player").transform;
-                    Transform cameraFollowposition=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().transform;
-                    //Debug.Log(cameraFollowposition.position+barrelspot.position/2);
-                    Instantiate(waves[1].barrel,(cameraFollowposition.position+barrelspot.position)/2+new Vector3(20.0f,20.0f,0),cameraFollowposition.rotation);
+                if(currentWaveIndex==1 && i==8){
+                Transform barrelspot=GameObject.FindGameObjectWithTag("Player").transform;
+                Transform cameraFollowposition=GameObject.FindGameObjectWithTag("camera").GetComponent<CameraFollow>().transform;
+                //Debug.Log(cameraFollowposition.position+barrelspot.position/2);
+                Instantiate(waves[1].barrel,(barrelspot.position+2*cameraFollowposition.position),cameraFollowposition.rotation);
                 }  
             }    
             yield return new WaitForSeconds(currentWave.timeBetweenSpawns);//spawnning k time k beech 
          
          
-         }                                                      //me ruka phir continue kiya
-        }        
+                                                               //me ruka phir continue kiya
+        }
+    }        
     
     private void Update(){
         if(finishedSpawnning==true && GameObject.FindGameObjectsWithTag("Enemy").Length==0){

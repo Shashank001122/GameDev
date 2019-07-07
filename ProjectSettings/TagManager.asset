@@ -17,6 +17,7 @@ TagManager:
   - camera
   - smalldevil
   - transitionpanel
+  - smalldevilplayer
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - 
   - Cube
   - Sphere
-  - 
-  - 
+  - smallplayer
+  - Mainplayer
   - 
   - 
   - 
