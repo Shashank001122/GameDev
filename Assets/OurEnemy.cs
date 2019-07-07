@@ -123,10 +123,8 @@ public class OurEnemy : MonoBehaviour
             //GameObject smallPlayer=GameObject.FindGameObjectWithTag("smalldevilplayer");
             Global.count=2;
             Destroy(gameObject);
-            
         }
         if(health<=0 && mainweapon.transform.name=="finalweapon(Clone)" && Global.count==2){
-            Debug.Log("finalweapon possessed"+Global.count);
                 Instantiate(soundObject,transform.position,transform.rotation);
                 Destroy(gameObject);    
         }

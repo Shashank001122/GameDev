@@ -10,7 +10,6 @@ public class WaveSpawnner : MonoBehaviour
         public OurEnemy barrel;
         public int count;
         public float timeBetweenSpawns;
-
     }
     public GameObject barrels;// barrels is an array of transforms
     public Wave[] waves;
@@ -124,7 +123,7 @@ public class WaveSpawnner : MonoBehaviour
                 }
             }
             Instantiate(Devil,DevilSpawnPoint.position,DevilSpawnPoint.rotation);
-            radialprogressbar.SetActive(true);
+            //radialprogressbar.SetActive(true);
             }
         }
     }

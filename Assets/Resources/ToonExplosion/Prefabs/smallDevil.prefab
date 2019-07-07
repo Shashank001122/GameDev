@@ -26,8 +26,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   player: {fileID: 0}
+  smallPlayer: {fileID: 0}
   go: {fileID: 0}
-  speed: 8
+  speed: 15
   timeBetweenAttacks: 1
   damage: 1
   pickUpChance: 35
@@ -70,22 +71,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.95557237
-      objectReference: {fileID: 0}
-    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.14568949
-      objectReference: {fileID: 0}
-    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
-      propertyPath: m_Size.x
-      value: 2.2288823
-      objectReference: {fileID: 0}
-    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
-      propertyPath: m_Size.y
-      value: 4.0965414
       objectReference: {fileID: 0}
     - target: {fileID: 4172505011014624645, guid: 97e44e38fcba94e0b8485f8e79311408,
         type: 3}
@@ -147,6 +132,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1a2c4e0a0ef0f43e0b40b06998a2a458, type: 2}
+    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.95557237
+      objectReference: {fileID: 0}
+    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14568949
+      objectReference: {fileID: 0}
+    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2288823
+      objectReference: {fileID: 0}
+    - target: {fileID: 373162490, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
+      propertyPath: m_Size.y
+      value: 4.0965414
+      objectReference: {fileID: 0}
     - target: {fileID: 5012610188490547579, guid: 97e44e38fcba94e0b8485f8e79311408,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -167,26 +168,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.6762113
       objectReference: {fileID: 0}
-    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9997109
-      objectReference: {fileID: 0}
-    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.99911505
-      objectReference: {fileID: 0}
     - target: {fileID: 3836763302542657700, guid: 97e44e38fcba94e0b8485f8e79311408,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,6 +187,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.729358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9997109
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033234195490013181, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99911505
       objectReference: {fileID: 0}
     - target: {fileID: 993864903, guid: 97e44e38fcba94e0b8485f8e79311408, type: 3}
       propertyPath: m_IsActive

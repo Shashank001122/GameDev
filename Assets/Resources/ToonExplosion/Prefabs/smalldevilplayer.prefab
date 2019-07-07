@@ -604,7 +604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2300948517448413713}
   m_LocalRotation: {x: 0.018045126, y: 0.17404859, z: -0.003189961, w: 0.98456657}
-  m_LocalPosition: {x: -3.041998, y: 8.636334, z: 0}
+  m_LocalPosition: {x: -0.901001, y: 9.844134, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2300948516082431731}
@@ -700,6 +700,8 @@ MonoBehaviour:
   speed: 10
   finalWeapon: {fileID: 6830484150174555666}
   timeBetweenAttacks: 5
+  bloodsplash: {fileID: 8789655954861327615, guid: 929b61abb72d2dd4880ede4360898ec7,
+    type: 3}
 --- !u!1 &2300948517871524798
 GameObject:
   m_ObjectHideFlags: 0

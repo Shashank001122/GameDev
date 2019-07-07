@@ -14,6 +14,7 @@ public class smallplayer : MonoBehaviour
     public int speed;
     public GameObject finalWeapon;
     public int timeBetweenAttacks;
+    public GameObject bloodsplash;
     
     public void Start(){
         bossplayer=GameObject.FindGameObjectWithTag("devil");
@@ -29,19 +30,17 @@ public class smallplayer : MonoBehaviour
         if(Vector2.Distance(transform.position,bossplayer.transform.position)<stopDistance){
             transform.position=Vector2.MoveTowards(transform.position,bossplayer.transform.position,-1*speed*Time.deltaTime);
         }  
-        if(bossplayer==null){
-            Destroy(gameObject);
-        }
-    }
-    }   
 
-    public void TakeDamage(int damageAmount){
-        health-=damageAmount;
-        if (health<=0){
-            Destroy(gameObject,1);
+              /*
+        if(gameObject==null){
+        Instantiate(bloodsplash,transform.position,transform.rotation);
         }
+        */
         }
+        
+    }
     
+
     public void RangedAttack(){
         if(bossplayer!=null){
         Vector2 direction=bossplayer.transform.position-shotPoint.position; 

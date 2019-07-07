@@ -61,13 +61,16 @@ public void TakeDamage(int damageAmount){
         UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
-            Destroy(gameObject);
-            Instantiate(soundObject,transform.position,transform.rotation);
+            GameObject smallplayer=GameObject.FindGameObjectWithTag("smalldevilplayer");
+            //Instantiate(smallplayer.GetComponent<smallplayer>().bloodsplash,smallplayer.transform.position,smallplayer.transform.rotation);
+            Destroy(smallplayer);
+            Destroy(gameObject,2);
+            
+            //Instantiate(soundObject,transform.position,transform.rotation);
             ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
-            screenTransition.LoadScene("Lose");           
+            screenTransition.LoadScene("Lose");   
         }
-        }
-
+}
     //////////Change weapon is called///////////
     public void ChangeWeapon(Weapon WeaponToEquip){
         

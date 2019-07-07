@@ -23,6 +23,7 @@ ScriptsOnlyBuild:
     - Weapon
     - healthpick
     - rpb
+    - smallplayer
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -151,22 +152,46 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9982}
     - Class: 114
+      Script: {instanceID: 9996}
+    - Class: 114
+      Script: {instanceID: 10072}
+    - Class: 114
       Script: {instanceID: 10128}
     - Class: 114
       Script: {instanceID: 10274}
     - Class: 114
+      Script: {instanceID: 10386}
+    - Class: 114
       Script: {instanceID: 10422}
+    - Class: 114
+      Script: {instanceID: 10524}
+    - Class: 114
+      Script: {instanceID: 10544}
     - Class: 114
       Script: {instanceID: 10550}
     - Class: 114
       Script: {instanceID: 10552}
     - Class: 114
-      Script: {instanceID: 10914}
+      Script: {instanceID: 10574}
+    - Class: 114
+      Script: {instanceID: 10578}
+    - Class: 114
+      Script: {instanceID: 10658}
+    - Class: 114
+      Script: {instanceID: 10724}
+    - Class: 114
+      Script: {instanceID: 10898}
+    - Class: 114
+      Script: {instanceID: 10916}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -252,19 +277,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10574}
     - Class: 114
-      Script: {instanceID: 10656}
+      Script: {instanceID: 10658}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10724}
     - Class: 114
-      Script: {instanceID: 10754}
+      Script: {instanceID: 10756}
     - Class: 114
-      Script: {instanceID: 10800}
+      Script: {instanceID: 10802}
     - Class: 114
-      Script: {instanceID: 10830}
+      Script: {instanceID: 10832}
     - Class: 114
-      Script: {instanceID: 10896}
+      Script: {instanceID: 10898}
     - Class: 114
-      Script: {instanceID: 10914}
+      Script: {instanceID: 10916}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 122
@@ -847,13 +872,13 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: 89fb592c2e3bfba3cc5887210d03278e
+      Hash: e6caa90641f5941f116d24935e8ec877
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: smallDevil
   - hash:
       serializedVersion: 2
-      Hash: 4cfb30d2ec29cca2d073eee650be217f
+      Hash: dacf29d5a5867aab5d791b773c4ff5a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OurEnemy
@@ -883,19 +908,19 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: a41277aac18205c64e926316d89c989e
+      Hash: 08a0f87816d7b59e08aa49c6cbe85314
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pickup
   - hash:
       serializedVersion: 2
-      Hash: 89fb592c2e3bfba3cc5887210d03278e
+      Hash: e6caa90641f5941f116d24935e8ec877
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MeleeEnemy
   - hash:
       serializedVersion: 2
-      Hash: e18c0d1edaa631a9541e06f9076e2432
+      Hash: 7881bbd4ab393a764500aea1f0a9d8f9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveSpawnner
@@ -919,7 +944,7 @@ ScriptsOnlyBuild:
     className: DynamicJoystick
   - hash:
       serializedVersion: 2
-      Hash: d2fa77628f3b731cc15ef0db9eae8dd2
+      Hash: e1c181acdc37aad7920f619fd8ed9da4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyBullet
@@ -947,6 +972,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MyJoyStick
+  - hash:
+      serializedVersion: 2
+      Hash: e8945eff5f5f997dac9e9d5d69c81b11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: smallplayer
   - hash:
       serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
@@ -997,13 +1028,13 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 2c22507ae927c5be9f2116b65e3dba4b
+      Hash: e2295be3cc7890955aef16af86ebea5d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Summoner
   - hash:
       serializedVersion: 2
-      Hash: 0b60665d35cf2c4b0ce8c941998a07b0
+      Hash: f072bab4fd237bb13632c8fba7d3c49c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RangedEnemy
@@ -1067,4 +1098,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/Lose.unity
   - Assets/Scenes/Win.unity
-  playerPath: H:/Improvise/Manish/Revengers.apk
+  playerPath: H:/Improvise/FinalRevengers/Revengers.apk

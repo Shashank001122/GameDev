@@ -16,12 +16,12 @@ public class smallDevil : OurEnemy
         }
     public void Start(){
         player=GameObject.FindGameObjectWithTag("smalldevilplayer").transform;
-        smallPlayer=GameObject.FindGameObjectWithTag("smalldevilplayer").transform;
+        
     }
 
     private void Update(){
         
-        if(player!=null || smallPlayer!=null){
+        if(player!=null){
             if(Vector2.Distance(transform.position,player.position)>stopDistance){
                 transform.position=Vector2.MoveTowards(transform.position,player.position,speed*Time.deltaTime);
             }

@@ -46,9 +46,16 @@ public class Projectile : MonoBehaviour
             wavenumber=WaveSpawnnerScript.currentWaveIndex;
 
             if(collision.GetComponent<OurEnemy>().transform.name=="smallDevil(Clone)" && GameObject.FindGameObjectWithTag("Player")!= null ){
+                 /*
                  if(GameObject.FindGameObjectWithTag("devil")==null){
                     if(GameObject.FindGameObjectsWithTag("Enemy").Length!=0){
-                        collision.GetComponent<OurEnemy>().smallDevilHit(damage,collision,gameObject); 
+                         
+                        GameObject[] allsmalldevils=GameObject.FindGameObjectsWithTag("Enemy");
+                        foreach (GameObject child in allsmalldevils)
+                        {
+                            child.GetComponent<OurEnemy>().smallDevilHit(damage,collision,gameObject);
+                            
+                        }
                         DestroyProjectile();
                         StartCoroutine(Order());
                         screenTransition.LoadScene("Win");
@@ -63,7 +70,21 @@ public class Projectile : MonoBehaviour
                         DestroyProjectile();
                     }
                 }
-            
+                
+            */
+             collision.GetComponent<OurEnemy>().smallDevilHit(damage,collision,gameObject);
+             if(GameObject.FindGameObjectWithTag("devil")==null){
+                    if(GameObject.FindGameObjectsWithTag("Enemy").Length==0){   
+                        
+                        StartCoroutine(Order());
+                        screenTransition.LoadScene("Win");
+                    }
+                 }
+                    else{
+                        collision.GetComponent<OurEnemy>().smallDevilHit(damage,collision,gameObject); 
+                        DestroyProjectile();
+                    }
+                }
             if(wavenumber>=1){
                     if(collision.GetComponent<OurEnemy>().transform.name=="Sphere(Clone)"
                         && GameObject.FindGameObjectWithTag("Weapon").transform.name!="gun"

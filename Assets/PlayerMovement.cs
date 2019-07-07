@@ -40,11 +40,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void TakeDamage(int damageAmount){
+        
         health-=damageAmount;
         UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
-            Destroy(gameObject,1);
+            GameObject smallplayer=GameObject.FindGameObjectWithTag("smalldevilplayer");
+            //Instantiate(smallplayer.GetComponent<smallplayer>().bloodsplash,smallplayer.transform.position,smallplayer.transform.rotation);
+            Destroy(smallplayer);
+            Destroy(gameObject,2);
+            
             //Instantiate(soundObject,transform.position,transform.rotation);
             ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
             screenTransition.LoadScene("Lose");   
