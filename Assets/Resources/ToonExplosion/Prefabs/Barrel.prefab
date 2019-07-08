@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   player: {fileID: 0}
+  smallPlayer: {fileID: 0}
   go: {fileID: 0}
   speed: 0
   timeBetweenAttacks: 0
@@ -176,5 +177,12 @@ MonoBehaviour:
   playerHealth: 0
   check: 0
   count: 0
+  soundObject: {fileID: 7888436633998800944, guid: 6dcf08c039a1e7241afa760d2764203d,
+    type: 3}
   wavenumber: 0
+  prefab: {fileID: 0}
+  positionEnemyDie: {x: 0, y: 0}
+  bloodsplash: {fileID: 0}
+  scene:
+    m_Handle: 0
   scalingFactor: 5

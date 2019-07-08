@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Projectile : MonoBehaviour
 {
@@ -15,11 +15,13 @@ public class Projectile : MonoBehaviour
     public int Devilscripthealth;
     private ScreenTransition screenTransition;
     public GameObject soundObject;
-
+    public Scene scene;
     private void Start(){
         Invoke("DestroyProjectile",lifeTime);
         screenTransition=FindObjectOfType<ScreenTransition>();
         Instantiate(soundObject,transform.position,transform.rotation);
+        scene = SceneManager.GetActiveScene();
+        //Debug.Log("Active Scene is '" + scene.name + "'.");
     } 
 
     private void Update(){
@@ -58,12 +60,19 @@ public class Projectile : MonoBehaviour
                         }
                         DestroyProjectile();
                         StartCoroutine(Order());
-                        screenTransition.LoadScene("Win");
+                        if(scene.name=="Level2"){
+                            screenTransition.LoadScene("Win2");
                         }
-                    else{
-                        StartCoroutine(Order());
-                        screenTransition.LoadScene("Win");
-                    }
+                        else{
+                            screenTransition.LoadScene("Win");
+                        }
+                        }
+                    if(scene.name=="Level2"){
+                            screenTransition.LoadScene("Win2");
+                        }
+                        else{
+                            screenTransition.LoadScene("Win");
+                        }
                  }
                     else{
                         collision.GetComponent<OurEnemy>().smallDevilHit(damage,collision,gameObject); 
@@ -130,8 +139,7 @@ public class Projectile : MonoBehaviour
                 }
                 Destroy(collision.gameObject);
                 Instantiate(explosion,transform.position,Quaternion.identity);
-        }
-            
+        }   
         }   
 }
 

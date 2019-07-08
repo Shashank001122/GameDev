@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Global{
     public static int count=0;
 }
+
+
 public class OurEnemy : MonoBehaviour
 {
     public int health;
@@ -39,13 +41,19 @@ public class OurEnemy : MonoBehaviour
     public int wavenumber;
     public GameObject prefab;
     public Vector2 positionEnemyDie;
-    public GameObject bloodsplash;
+    public GameObject bloodsplash;  
+    public Scene scene;
 
         public virtual void Start(){
         player=GameObject.FindGameObjectWithTag("Player").transform;
-        
+       
+         Instantiate(soundObject,transform.position,transform.rotation);
+        scene = SceneManager.GetActiveScene();
+
         //StartCoRoutine(Scale());
     }
+
+
 
     public float scalingFactor = 5.0f;
  
@@ -210,12 +218,20 @@ public class OurEnemy : MonoBehaviour
     playerScript=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     playerHealth=playerScript.health;
     if(randHealth<healthPickupChance){
-        if(playerHealth<6){
+        
+        if(scene.name=="SampleScene"){
+        if(playerHealth<8){
         healthPickup.transform.position=this.gameObject.transform.position+new Vector3(6f,1f,0f);
         Instantiate(healthPickup,transform.position,transform.rotation);
     }
     }
-    
+    else{
+        if(playerHealth<10){
+        healthPickup.transform.position=this.gameObject.transform.position+new Vector3(6f,1f,0f);
+        Instantiate(healthPickup,transform.position,transform.rotation);
+    }
+    }
+    }
     Destroy(gameObject);
     Instantiate(soundObject,transform.position,transform.rotation);
     }

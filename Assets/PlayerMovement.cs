@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
    public float speed;
@@ -18,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
    public int wavenumber;
    public Animator hurtAnim;
    public GameObject soundObject;
-   
+   public Scene scene;
    private void Start(){
        anim=GetComponent<Animator>();
        rb=GetComponent<Rigidbody2D>();
+       scene = SceneManager.GetActiveScene();
+       
+        //Debug.Log("Active Scene is '" + scene.name + "'.");
    }    
 
    private void Update(){
@@ -52,7 +56,13 @@ public class PlayerMovement : MonoBehaviour
             
             //Instantiate(soundObject,transform.position,transform.rotation);
             ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
-            screenTransition.LoadScene("Lose");   
+              if(scene.name=="Level2"){
+                            screenTransition.LoadScene("Lose2");
+                        }
+                        else{
+                            screenTransition.LoadScene("Lose");
+                        }
+           // screenTransition.LoadScene("Lose");   
         }
         }
 
@@ -83,7 +93,9 @@ public class PlayerMovement : MonoBehaviour
     } 
 
     void UpdateHealthUI(int currentHealth){
-        for(int i=0;i<hearts.Length;i++){
+        if(scene.name=="SampleScene"){
+        
+        for(int i=0;i<8;i++){
             if(i<currentHealth){
                 hearts[i].sprite=fullHeart;
             }    
@@ -92,17 +104,43 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+        }
+        else{
+         for(int i=0;i<10;i++){
+            if(i<currentHealth){
+                hearts[i].sprite=fullHeart;
+            }    
+            else{
+                hearts[i].sprite=emptyHeart;
+            }
+
+        }
+        }   
+        
     }
 
 
     public void Heal(int healamount){
-        if(health+healamount>6){
-            health=6;
+        if(scene.name=="SampleScene"){
+        if(health+healamount>8){
+            health=8;
         }
         else{
             health=health+healamount;
         }
         UpdateHealthUI(health);
         
+    }
+    
+    else{
+        if(health+healamount>10){
+            health=10;
+        }
+        else{
+            health=health+healamount;
+        }
+        UpdateHealthUI(health);
+        
+    }
     }  
 }
