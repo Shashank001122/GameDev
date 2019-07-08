@@ -280,11 +280,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   player: {fileID: 0}
+  smallPlayer: {fileID: 0}
   go: {fileID: 0}
   speed: 5
   timeBetweenAttacks: 5
   damage: 1
-  pickUpChance: 25
+  pickUpChance: 15
   pickups:
   - {fileID: 3396478834323875631, guid: bdaf05d4009129642bccf01c93ba2fd4, type: 3}
   - {fileID: 4212121972054764341, guid: 06e23d31f220ff24c905b363b18186ac, type: 3}
@@ -295,7 +296,7 @@ MonoBehaviour:
     type: 3}
   ind: 0
   index: 0
-  healthPickupChance: 25
+  healthPickupChance: 20
   healthPickup: {fileID: 931730159648237483, guid: 5918f3f3f067b234f8bd6c864fb4edbe,
     type: 3}
   playerHealth: 0
@@ -304,6 +305,9 @@ MonoBehaviour:
   soundObject: {fileID: 9046745828063492440, guid: 0fa23adfcd9f3fa4e8e64c6fb00318a4,
     type: 3}
   wavenumber: 0
+  prefab: {fileID: 0}
+  positionEnemyDie: {x: 0, y: 0}
+  bloodsplash: {fileID: 0}
   scalingFactor: 4
   stopDistance: 2
   attackSpeed: 2

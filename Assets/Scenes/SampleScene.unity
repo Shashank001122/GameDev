@@ -498,7 +498,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238080053}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6346085ba14b1544bb659e44155f7257, type: 3}
   m_Name: 
@@ -1700,15 +1700,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.95907784, g: 0.9716981, b: 0.9579477, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2114,12 +2114,12 @@ PrefabInstance:
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 143.9
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 130.1
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -2159,7 +2159,7 @@ PrefabInstance:
     - target: {fileID: 2929252285020697096, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2929252285020697096, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -2169,8 +2169,20 @@ PrefabInstance:
     - target: {fileID: 2929252285020697096, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 82.8
+      value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 48c0d4d6bebaa934384b07aa1e2f8184,
+        type: 3}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5eda94a9dcf71e445ad17e3c065d1460,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!224 &1466569569 stripped
@@ -2953,7 +2965,7 @@ PrefabInstance:
     - target: {fileID: -3604766993772788417, guid: 06c44960c9c784c1b875e6dcb27905d3,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3604766993772788417, guid: 06c44960c9c784c1b875e6dcb27905d3,
         type: 3}
@@ -3500,6 +3512,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 249184971}
     m_Modifications:
+    - target: {fileID: 6539993880722515884, guid: 4874396ee8d3da541ba381bd07b6a407,
+        type: 3}
+      propertyPath: m_Name
+      value: gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539993880722515884, guid: 4874396ee8d3da541ba381bd07b6a407,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539993880722515884, guid: 4874396ee8d3da541ba381bd07b6a407,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 6539993880722515886, guid: 4874396ee8d3da541ba381bd07b6a407,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3570,21 +3597,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 6539993880722515884, guid: 4874396ee8d3da541ba381bd07b6a407,
-        type: 3}
-      propertyPath: m_Name
-      value: gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539993880722515884, guid: 4874396ee8d3da541ba381bd07b6a407,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539993880722515884, guid: 4874396ee8d3da541ba381bd07b6a407,
-        type: 3}
-      propertyPath: m_TagString
-      value: Weapon
-      objectReference: {fileID: 0}
     - target: {fileID: 6539993880722515887, guid: 4874396ee8d3da541ba381bd07b6a407,
         type: 3}
       propertyPath: m_SortingOrder
@@ -3621,14 +3633,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 951522099, guid: 4874396ee8d3da541ba381bd07b6a407, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 943941810309548341, guid: 4874396ee8d3da541ba381bd07b6a407,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 951522099, guid: 4874396ee8d3da541ba381bd07b6a407, type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4874396ee8d3da541ba381bd07b6a407, type: 3}
@@ -3657,6 +3669,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1345310602}
     m_Modifications:
+    - target: {fileID: 1943871267040289105, guid: 3ebad2a6e1e937b4b8a308712b78914b,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponJoystick
+      objectReference: {fileID: 0}
     - target: {fileID: 1943871267040289104, guid: 3ebad2a6e1e937b4b8a308712b78914b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3725,12 +3742,12 @@ PrefabInstance:
     - target: {fileID: 1943871267040289104, guid: 3ebad2a6e1e937b4b8a308712b78914b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 140.6
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1943871267040289104, guid: 3ebad2a6e1e937b4b8a308712b78914b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 135.05
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1943871267040289104, guid: 3ebad2a6e1e937b4b8a308712b78914b,
         type: 3}
@@ -3762,11 +3779,28 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1943871267040289105, guid: 3ebad2a6e1e937b4b8a308712b78914b,
+    - target: {fileID: 1943871266791793322, guid: 3ebad2a6e1e937b4b8a308712b78914b,
         type: 3}
-      propertyPath: m_Name
-      value: WeaponJoystick
+      propertyPath: m_SizeDelta.x
+      value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 1943871266791793322, guid: 3ebad2a6e1e937b4b8a308712b78914b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943871267040289107, guid: 3ebad2a6e1e937b4b8a308712b78914b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 48c0d4d6bebaa934384b07aa1e2f8184,
+        type: 3}
+    - target: {fileID: 1943871266791794005, guid: 3ebad2a6e1e937b4b8a308712b78914b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5eda94a9dcf71e445ad17e3c065d1460,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ebad2a6e1e937b4b8a308712b78914b, type: 3}
 --- !u!1001 &5512303126047208915
@@ -3854,7 +3888,7 @@ PrefabInstance:
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
       propertyPath: waves.Array.data[1].enemies.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
@@ -3916,7 +3950,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Devil
       value: 
-      objectReference: {fileID: 4015192532831104294, guid: 97e44e38fcba94e0b8485f8e79311408,
+      objectReference: {fileID: 572035095645076944, guid: 97e44e38fcba94e0b8485f8e79311408,
         type: 3}
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
@@ -3926,12 +3960,12 @@ PrefabInstance:
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
       propertyPath: waves.Array.data[1].timeBetweenSpawns
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
       propertyPath: waves.Array.data[1].count
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
@@ -3991,7 +4025,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].enemies.Array.data[1]
       value: 
-      objectReference: {fileID: -5765932747666913022, guid: ad933a1ddaa1c477895aeaf271d002d2,
+      objectReference: {fileID: 4639271007141274620, guid: ad933a1ddaa1c477895aeaf271d002d2,
         type: 3}
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
@@ -4116,6 +4150,12 @@ PrefabInstance:
     - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
         type: 3}
       propertyPath: waves.Array.data[1].enemies.Array.data[11]
+      value: 
+      objectReference: {fileID: 4580935678932232688, guid: d07440e95d59c404bb62a44803ef454e,
+        type: 3}
+    - target: {fileID: 5512303126172712777, guid: 3eb4e157105a58940bcf428a9faaaa15,
+        type: 3}
+      propertyPath: waves.Array.data[1].enemies.Array.data[12]
       value: 
       objectReference: {fileID: 4580935678932232688, guid: d07440e95d59c404bb62a44803ef454e,
         type: 3}

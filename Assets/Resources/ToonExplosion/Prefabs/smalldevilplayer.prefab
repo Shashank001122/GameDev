@@ -604,7 +604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2300948517448413713}
   m_LocalRotation: {x: 0.018045126, y: 0.17404859, z: -0.003189961, w: 0.98456657}
-  m_LocalPosition: {x: -0.901001, y: 9.844134, z: 0}
+  m_LocalPosition: {x: 2.2599394, y: 3.7963207, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2300948516082431731}
@@ -695,7 +695,7 @@ MonoBehaviour:
   shotPoint: {fileID: 3458357230391182673}
   EnemyBullet: {fileID: 1506863734719116749, guid: 3eeb620dd1f9ebe438b336dd7a487802,
     type: 3}
-  bossplayer: {fileID: 4015192532831104294, guid: 97e44e38fcba94e0b8485f8e79311408,
+  bossplayer: {fileID: 572035095645076944, guid: 97e44e38fcba94e0b8485f8e79311408,
     type: 3}
   speed: 10
   finalWeapon: {fileID: 6830484150174555666}

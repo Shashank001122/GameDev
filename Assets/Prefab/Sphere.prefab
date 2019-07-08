@@ -504,9 +504,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   player: {fileID: 0}
+  smallPlayer: {fileID: 0}
   go: {fileID: 0}
-  speed: 8
-  timeBetweenAttacks: 2
+  speed: 6
+  timeBetweenAttacks: 1
   damage: 1
   pickUpChance: 90
   pickups:
@@ -526,6 +527,9 @@ MonoBehaviour:
   soundObject: {fileID: 9046745828063492440, guid: 687004a3dcef63d4cb4c1a3c12d811fb,
     type: 3}
   wavenumber: 0
+  prefab: {fileID: 0}
+  positionEnemyDie: {x: 0, y: 0}
+  bloodsplash: {fileID: 0}
   scalingFactor: 0
   stopDistance: 5
   attackSpeed: 1

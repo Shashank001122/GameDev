@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1420177579039799556}
   - component: {fileID: -4213338887762735453}
   m_Layer: 0
-  m_Name: w1_projections
+  m_Name: w1_projections_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 60
   lifeTime: 0.7
-  explosion: {fileID: 8789655954861327615, guid: 1c7f28a139b4e824bbb8936151384bcb,
+  explosion: {fileID: 6676099615429166516, guid: 9448208bfea67ce4d93be3a79504988f,
     type: 3}
   damage: 2
   wavenumber: 0

@@ -104,7 +104,7 @@ public class OurEnemy : MonoBehaviour
             pickups[0].GetComponent<Pickup>().typeofprojectile=prefab1;
             }
                 
-                Instantiate(pickups[0],pickups[0].transform.position+new Vector3(7.0f,7.0f,0.0f),pickups[0].transform.rotation);
+                Instantiate(pickups[0],pickups[0].transform.position+new Vector3(10.0f,10.0f,0.0f),pickups[0].transform.rotation);
                 Global.count=1;
                 }
             Destroy(gameObject);    

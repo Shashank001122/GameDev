@@ -31,15 +31,12 @@ public class smallplayer : MonoBehaviour
             transform.position=Vector2.MoveTowards(transform.position,bossplayer.transform.position,-1*speed*Time.deltaTime);
         }  
 
-              /*
-        if(gameObject==null){
+        if(GameObject.FindGameObjectWithTag("devil").GetComponent<Devil>().health<10){
         Instantiate(bloodsplash,transform.position,transform.rotation);
+        Destroy(gameObject);
         }
-        */
-        }
-        
     }
-    
+    }
 
     public void RangedAttack(){
         if(bossplayer!=null){
