@@ -40,6 +40,8 @@ MonoBehaviour:
   positionEnemyDie: {x: 0, y: 0}
   bloodsplash: {fileID: 8789655954861327615, guid: ca132ca7bdc6d4598a0ec5ab50e0cc92,
     type: 3}
+  scene:
+    m_Handle: 0
   scalingFactor: 5
   stopDistance: 0
   attackSpeed: 0
@@ -120,6 +122,31 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c8291cb8cd48c034a931d8a20faa0efc, type: 2}
+    - target: {fileID: 7278839791482745909, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 318632974357942823, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 318632974357942823, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2395594
+      objectReference: {fileID: 0}
+    - target: {fileID: 318632974357942823, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 318632974357942823, guid: 97e44e38fcba94e0b8485f8e79311408,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4548546
+      objectReference: {fileID: 0}
     - target: {fileID: 2208578135732099572, guid: 97e44e38fcba94e0b8485f8e79311408,
         type: 3}
       propertyPath: m_IsActive

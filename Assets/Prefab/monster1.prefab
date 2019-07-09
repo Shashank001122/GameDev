@@ -123,7 +123,7 @@ MonoBehaviour:
   damage: 1
   soundObject: {fileID: 9046745828063492440, guid: 116a1032bacfc91439058f4eff543cbb,
     type: 3}
-  EnemyBullet: {fileID: 1506863734719116749, guid: fb552b1389adf5441894c89d8b22530b,
+  EnemyBullet: {fileID: 1506863734719116749, guid: 886dfb005c7576c4682345eb0e2eff82,
     type: 3}
   player: {fileID: 0}
   shotPoint: {fileID: 4421067248079617849}

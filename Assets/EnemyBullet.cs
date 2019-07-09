@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemyBullet : MonoBehaviour
 {
-    private PlayerMovement playerScript;
+    //private PlayerMovement playerScript;
+    private MyJoyStick playerScript;
     private Vector2 targetPosition;
     public GameObject explosion;
 
@@ -13,9 +13,9 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {   
-        playerScript =GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        //playerScript =GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerScript =GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>();
         targetPosition=playerScript.transform.position;
-
     }
 
     // Update is called once per frame

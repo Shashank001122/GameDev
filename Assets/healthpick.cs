@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class healthpick : MonoBehaviour
 {
-    PlayerMovement playerScript;
+    MyJoyStick playerScript;
     public int healamount;  
     public GameObject soundObject;
     private void Start(){
         //getting playerscirpt of PLayer object using get component and then later on calling Heal method in Playermovement script.
-        playerScript=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerScript=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>();
 
     }   
     private void OnTriggerEnter2D(Collider2D collision){

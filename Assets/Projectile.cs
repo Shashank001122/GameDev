@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     private void Start(){
         Invoke("DestroyProjectile",lifeTime);
         screenTransition=FindObjectOfType<ScreenTransition>();
-        Instantiate(soundObject,transform.position,transform.rotation);
+        //Instantiate(soundObject,transform.position,transform.rotation);
         scene = SceneManager.GetActiveScene();
         //Debug.Log("Active Scene is '" + scene.name + "'.");
     } 
@@ -95,7 +95,8 @@ public class Projectile : MonoBehaviour
                     }
                 }*/
             if(wavenumber>=1){
-                    if(collision.GetComponent<OurEnemy>().transform.name=="Sphere(Clone)"
+                    if((collision.GetComponent<OurEnemy>().transform.name=="Sphere(Clone)" ||
+                    collision.GetComponent<OurEnemy>().transform.name=="Sphere2(Clone)")
                         && GameObject.FindGameObjectWithTag("Weapon").transform.name!="gun"
                         )
                     {        

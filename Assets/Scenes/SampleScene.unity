@@ -498,7 +498,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238080053}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6346085ba14b1544bb659e44155f7257, type: 3}
   m_Name: 
@@ -520,7 +520,10 @@ MonoBehaviour:
   joystick: {fileID: 1466569570}
   check: 0
   hurtAnim: {fileID: 1212390608}
-  soundObject: {fileID: 0}
+  soundObject: {fileID: 7313392387109388514, guid: 7aee02e322cf9c4419c59b03c7b13760,
+    type: 3}
+  scene:
+    m_Handle: 0
 --- !u!4 &249184971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2783214956227552626, guid: 06c44960c9c784c1b875e6dcb27905d3,
@@ -1681,7 +1684,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: b6ed5f3d228c74b2db2f562a3b3addd7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2965,7 +2968,7 @@ PrefabInstance:
     - target: {fileID: -3604766993772788417, guid: 06c44960c9c784c1b875e6dcb27905d3,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3604766993772788417, guid: 06c44960c9c784c1b875e6dcb27905d3,
         type: 3}

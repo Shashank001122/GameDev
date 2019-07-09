@@ -28,8 +28,8 @@ public class MeleeEnemy : OurEnemy
          yield break;
      }
      
-     player.GetComponent<PlayerMovement>().TakeDamage(damage);
-     
+     //player.GetComponent<PlayerMovement>().TakeDamage(damage);
+     player.GetComponent<MyJoyStick>().TakeDamage(damage);
      Vector2 originalPosition=transform.position;
      Vector2 targetPosition=player.position;
 

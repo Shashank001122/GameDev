@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 //using UnityStandardAssets.CrossPlatformInput;
 public class MyJoyStick : MonoBehaviour
 {
@@ -21,9 +22,11 @@ public class MyJoyStick : MonoBehaviour
     public bool check;
     public Animator hurtAnim;
     public GameObject soundObject;
+    public Scene scene;
     private void Start(){
        anim=GetComponent<Animator>();
        rb=GetComponent<Rigidbody2D>();
+        scene = SceneManager.GetActiveScene();
        joystick=GameObject.FindObjectOfType<Joystick>();          
     }
   
@@ -57,20 +60,27 @@ public class MyJoyStick : MonoBehaviour
     }
 */
 public void TakeDamage(int damageAmount){
+        
         health-=damageAmount;
         UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
-            GameObject smallplayer=GameObject.FindGameObjectWithTag("smalldevilplayer");
+            //GameObject smallplayer=GameObject.FindGameObjectWithTag("smalldevilplayer");
             //Instantiate(smallplayer.GetComponent<smallplayer>().bloodsplash,smallplayer.transform.position,smallplayer.transform.rotation);
-            Destroy(smallplayer);
-            Destroy(gameObject,2);
+            //Destroy(smallplayer);
+            Destroy(gameObject);
             
             //Instantiate(soundObject,transform.position,transform.rotation);
             ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();
-            screenTransition.LoadScene("Lose");   
+              if(scene.name=="Level2"){
+                            screenTransition.LoadScene("Lose2");
+                        }
+                        else{
+                            screenTransition.LoadScene("Lose");
+                        }
+           // screenTransition.LoadScene("Lose");   
         }
-}
+        }
     //////////Change weapon is called///////////
     public void ChangeWeapon(Weapon WeaponToEquip){
         
@@ -96,7 +106,9 @@ public void TakeDamage(int damageAmount){
     } 
 
     void UpdateHealthUI(int currentHealth){
-        for(int i=0;i<hearts.Length;i++){
+        if(scene.name=="SampleScene"){
+        
+        for(int i=0;i<8;i++){
             if(i<currentHealth){
                 hearts[i].sprite=fullHeart;
             }    
@@ -105,10 +117,24 @@ public void TakeDamage(int damageAmount){
             }
 
         }
+        }
+        else{
+         for(int i=0;i<10;i++){
+            if(i<currentHealth){
+                hearts[i].sprite=fullHeart;
+            }    
+            else{
+                hearts[i].sprite=emptyHeart;
+            }
+
+        }
+        }   
+        
     }
 
 
     public void Heal(int healamount){
+        if(scene.name=="SampleScene"){
         if(health+healamount>8){
             health=8;
         }
@@ -117,5 +143,17 @@ public void TakeDamage(int damageAmount){
         }
         UpdateHealthUI(health);
         
-    }  
+    }
+    
+    else{
+        if(health+healamount>10){
+            health=10;
+        }
+        else{
+            health=health+healamount;
+        }
+        UpdateHealthUI(health);
+        
+    }
+    }
 }

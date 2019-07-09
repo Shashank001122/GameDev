@@ -49,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
         UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
         if (health<=0){
-            GameObject smallplayer=GameObject.FindGameObjectWithTag("smalldevilplayer");
+            
             //Instantiate(smallplayer.GetComponent<smallplayer>().bloodsplash,smallplayer.transform.position,smallplayer.transform.rotation);
-            Destroy(smallplayer);
-            Destroy(gameObject,2);
+            //Destroy(smallplayer);
+            Destroy(gameObject);
             
             //Instantiate(soundObject,transform.position,transform.rotation);
             ScreenTransition screenTransition=GameObject.FindGameObjectWithTag("transitionpanel").GetComponent<ScreenTransition>();

@@ -37,8 +37,8 @@ public class smallDevil : OurEnemy
     
     IEnumerator Attack(){
 
-     player.GetComponent<PlayerMovement>().TakeDamage(damage);
-     smallPlayer.GetComponent<PlayerMovement>().TakeDamage(damage);
+     player.GetComponent<MyJoyStick>().TakeDamage(damage);
+     smallPlayer.GetComponent<MyJoyStick>().TakeDamage(damage);
      Vector2 originalPosition=transform.position;
      Vector2 targetPosition=player.position;
 

@@ -1,0 +1,4 @@
+#Mon Jul 08 23:25:27 PDT 2019
+base.0=H\:\\Improvise\\FinalRevengers 2\\Temp\\gradleOut\\launcher\\build\\intermediates\\transforms\\dexMerger\\release\\0
+path.0=classes.dex
+renamed.0=classes.dex

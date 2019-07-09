@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Global{
     public static int count=0;
+    public static int scorecount=0;
 }
-
-
 public class OurEnemy : MonoBehaviour
 {
     public int health;
@@ -32,7 +31,8 @@ public class OurEnemy : MonoBehaviour
     public int index;
     public int healthPickupChance;
     public GameObject healthPickup;
-    PlayerMovement playerScript;   
+    //PlayerMovement playerScript;   
+    public MyJoyStick playerScript;
     public int playerHealth; 
     public bool check;
     public int count;
@@ -47,7 +47,7 @@ public class OurEnemy : MonoBehaviour
         public virtual void Start(){
         player=GameObject.FindGameObjectWithTag("Player").transform;
        
-         Instantiate(soundObject,transform.position,transform.rotation);
+        //Instantiate(soundObject,transform.position,transform.rotation);
         scene = SceneManager.GetActiveScene();
 
         //StartCoRoutine(Scale());
@@ -80,6 +80,7 @@ public class OurEnemy : MonoBehaviour
 
     public void smallDevilHit(int damageAmount, Collider2D collision, GameObject proj){
         health-=damageAmount;
+        Global.scorecount+=damageAmount;
         GameObject mainweapon=GameObject.FindGameObjectWithTag("Weapon");
         Debug.Log(proj);
         
@@ -157,6 +158,7 @@ public class OurEnemy : MonoBehaviour
             }
             if(GameObject.FindGameObjectWithTag("Weapon").transform.name =="gun(Clone)"){
                     health-=boostAmount;
+                    Global.scorecount+=boostAmount;
                     if(health<=0){
                          Destroy(gameObject);
                          //orange wala prefab
@@ -168,6 +170,7 @@ public class OurEnemy : MonoBehaviour
     public void TakeDamage(int damageAmount){
         if(GameObject.FindGameObjectWithTag("Player")){
         health-=damageAmount;
+        Global.scorecount+=damageAmount;
         
         mainweapon=GameObject.FindGameObjectWithTag("Weapon");
         if (health<=0){
@@ -191,7 +194,7 @@ public class OurEnemy : MonoBehaviour
                 Instantiate(pickups[0],pickups[0].transform.position,transform.rotation);//gameObject.instantiate     
                 }
 
-                 else{
+                else{
                  
                  char name=mainweapon.transform.name[7];
                  ind=System.Convert.ToInt32(name);//1 or 2
@@ -212,10 +215,10 @@ public class OurEnemy : MonoBehaviour
                     randomPickup.transform.position=(GameObject.FindGameObjectWithTag("Player").transform.position+this.gameObject.transform.position)/2;
                     Instantiate(randomPickup,transform.position,transform.rotation);
                 }                            
-        }
             }
+        }
     int randHealth=Random.Range(0,101);
-    playerScript=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    playerScript=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>();
     playerHealth=playerScript.health;
     if(randHealth<healthPickupChance){
         

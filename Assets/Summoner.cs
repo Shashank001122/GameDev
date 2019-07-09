@@ -57,7 +57,7 @@ public class Summoner : OurEnemy
         }
     }
     IEnumerator Attack(){
-     player.GetComponent<PlayerMovement>().TakeDamage(damage);
+     player.GetComponent<MyJoyStick>().TakeDamage(damage);
      Vector2 originalPosition=transform.position;
      Vector2 targetPosition=player.position;
 

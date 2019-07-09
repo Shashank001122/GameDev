@@ -14,7 +14,7 @@ public class HealthBarSummoner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float health=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().health;
+        float health=GameObject.FindGameObjectWithTag("Player").GetComponent<MyJoyStick>().health;
         localScale.x=health/3;
         transform.localScale=localScale;
     }

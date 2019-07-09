@@ -64,7 +64,7 @@ public class Devil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag=="Player"){
-            collision.GetComponent<PlayerMovement>().TakeDamage(damage);
+            collision.GetComponent<MyJoyStick>().TakeDamage(damage);
         }
     }
 }

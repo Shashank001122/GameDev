@@ -21,7 +21,7 @@ public class ScreenTransition : MonoBehaviour {
 
     IEnumerator Transition(string sceneName) {
         transitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.1f);
         Debug.Log("Scene end");
         SceneManager.LoadScene(sceneName);
     }
